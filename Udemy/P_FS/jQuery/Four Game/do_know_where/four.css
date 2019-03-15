@@ -1,0 +1,57 @@
+.container {
+  text-align: center;
+  max-height: 100vh;
+  font-family: 'Marck Script', cursive;
+}
+.circle {
+  width: 50px;
+  height: 50px;
+  background: gray;
+  border: 1px solid black;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.gridContainer {
+  /* attempt to make game-field scalable by setting view-point */
+  /* height: 70vh;
+  width: 70vh; */
+
+  /* test area to see the border of container */
+  /* border: 2px solid black; */
+
+  /* setting all parameters to the grid */
+  display: grid;
+  grid-template-columns: repeat(8, 50px);
+  grid-template-rows: repeat(8, 1fr);
+  grid-row-gap: 5px;
+  grid-column-gap: 5px;
+  justify-content: center;
+}
+
+h1, h2 {
+  margin-bottom: 1px;
+}
+
+.getRed {
+  background-color: #fc2205;
+  border: 3px solid #c6210b;
+}
+
+.getBlue {
+  background-color: #3b12d1;
+  border: 3px solid #2f1396;
+}
+
+.congrads {
+  text-align: center;
+  font-size: 65px;
+  padding-top: 200px;
+  display: none;
+  font-family: 'Gochi Hand', cursive;
+  /* border:solid black 1px; */
+}
+
+#instruction {
+  font-size: 22px;
+}

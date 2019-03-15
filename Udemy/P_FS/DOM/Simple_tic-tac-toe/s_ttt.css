@@ -1,0 +1,23 @@
+.field {
+  /* border: 10px solid black; */
+  justify-content: center;
+}
+
+table td {
+  border: 2px solid blue;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+}
+table {
+  margin: auto;
+}
+.my-4 a{
+  max-height: 50px;
+}
+
+.cont_for_jtrone {
+  max-width: 950px;
+  text-align: center;
+  margin:auto;
+}

@@ -1,0 +1,118 @@
+/* General rules for page zone*/
+body {
+  background-color: white;
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: 'Inconsolata', monospace;
+}
+.insert {
+  background-color: #51b5ac;
+  padding: 10px 10px 10px 10px;
+  border-radius: 5px;
+  line-height: 2;
+}
+
+hr.style2 {
+	border-top: 3px double #8c8b8b;
+}
+hr.style1{
+	border-top: 2px solid #8c8b8b;
+}
+
+/* Special decoration for links zone */
+a:link {
+  color:black;
+  text-decoration: none;
+}
+
+a:visited {
+  color:black;
+  text-decoration: none;
+}
+
+.container_left_side a{
+  font-size: 1.2em;
+  padding-left: 5px;
+  width: 100%;
+}
+
+/* Special decoration for links zone is over*/
+
+header {
+  font-weight: 800;
+  font-size: 1.3em;
+}
+/* General rules for page zone is over*/
+
+
+/* Media zone strats! */
+
+/* LARGE screen zone starts */
+@media (min-width: 900px){
+
+  .containerGlobal {
+    display: grid;
+    grid-template-columns: 300px 4fr;
+    grid-template-areas:
+    "left right";
+    column-gap: 1%;
+  }
+
+  .container_left_side {
+    max-height: 500px;
+  }
+
+  .container_right_side {
+  border-left: 3px solid #8c8b8b;
+}
+
+}
+/* LARGE screen zone is over */
+
+/* MEDIUM screen zone starts */
+@media (max-width: 900px) {
+  .containerGlobal {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 300px 4fr;
+
+    grid-template-areas:
+    "left"
+    "right";
+  }
+
+.container_left_side {
+      max-height: 250px;
+      border-bottom: 3px solid #8c8b8b;
+  }
+}
+/* MEDIUM screen zone is over */
+
+/* Media zone is over  */
+
+.container_left_side header{
+text-align: center;
+padding-top: -2px;
+margin-top: 0px;
+}
+
+
+.container_left_side {
+  grid-area: left;
+  padding-left: 0px;
+  text-align: left;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.container_right_side {
+  grid-area:right;
+  padding-left: 2%;
+  padding-right: 1%;
+}
+
+
+
+
+
+
+/* TEST ZONE FOR CREATING */

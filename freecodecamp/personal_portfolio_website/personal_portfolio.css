@@ -1,0 +1,265 @@
+body {
+  font-family: 'Caveat', cursive, "sans-serif", cursive, "serif", cursive;
+  font-size: 18px;
+  height: 100%;
+  weight: 100%;
+  text-align: center;
+}
+
+/* -------------------------------------------------------------------- */
+/* Navigation bar making section started*/
+.navbar {
+  width: 100%; /* Full width */
+  overflow: hidden;
+  background-color: #2370ed;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  margin-left: -10px;
+  padding-right: 10px;
+}
+
+.navigation_bar {
+  width: 98%;
+}
+
+#navbar {
+  display: flex;
+  width: 50%;
+  margin-left: auto;
+  justify-content: space-between;
+}
+#navbar a {
+  color: #153466;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+#navbar a:hover {
+  color: #46a031;
+  /* text-decoration: none; */
+}
+
+/* Navigation bar making section is over*/
+
+/* Greeting making section started*/
+.welcome-section {
+  /* border:1px solid black; */
+  min-height: 100vh;
+  width: 100%;
+  background-color:#2370ed;
+  /* making all items align to center */
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  /* making np white spaces on the sides and top */
+  margin-left: -10px;
+  padding-right: 20px;
+  margin-top: -10px;
+}
+
+/* Making the paragraph and heading closer to each other */
+.greetings p{
+  margin-top: -25px;
+}
+
+/* Greeting making section over*/
+
+/* -------------------------------------------------------------------- */
+/* Projects making section over*/
+#projects {
+  text-align: center;
+}
+
+.project_container{
+  width: 100%;
+  height: 100%;
+  display:flex;
+  align-items: center;
+
+  justify-content: center;
+  /* flex-wrap: wrap; */
+  flex-flow: row wrap;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: auto;
+  border-bottom: 15px solid transparent;
+
+}
+
+.bordered {
+  /* border-bottom: solid 1em transparent; */
+  border-width: 10px 15px 10px 15px;
+  border-style: solid;
+  border-color: transparent;
+}
+
+.all_projects_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-tile {
+  border: 2px solid #3dedac;
+  border-radius: 13px;
+  max-width: 302px;
+  max-height: 350px;
+  min-width: 85px;
+}
+
+.project-tile img{
+  max-width: 99%;
+  max-height: 100%;
+  margin-left: -1px;
+  padding-right: 3px;
+  border-bottom: 2px solid #3dedac;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.all_project-tile {
+  border: 2px solid #3dedac;
+  border-radius: 13px;
+  width: 152px;
+  max-height: 350px;
+}
+
+
+.second_anchor{
+  display: block;
+  min-width: 100%;
+  text-decoration: none;
+  color: black;
+}
+
+
+/* Projects making section over*/
+
+/* -------------------------------------------------------------------- */
+
+/* Contacts making section started*/
+#contacts {
+  text-align: center;
+  background-color:#2370ed;
+  /* making np white spaces on the sides and top */
+  margin-left: -10px;
+  padding-right: 20px;
+  margin-top: -10px;
+  padding-bottom: 5%;
+  width: 100%;
+}
+
+
+.contacts_container {
+  display: grid;
+  justify-items:center;
+  align-items:center;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(60px, 1fr));
+
+}
+
+.contact-tile {
+  width: 75px;
+  height: 75px;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+
+.contact-tile a {
+  text-decoration: none;
+  color: black;
+  display: table;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  padding-top: 30%;
+}
+
+.contact-tile a:hover {
+  color: #46a031;
+  background-color: white;
+
+}
+
+/* Contacts making section over*/
+
+/* -------------------------------------------------------------------- */
+
+/* Footer making section started*/
+#footer {
+  background-color: #053c93;
+  /* Make the section take full page */
+  padding-bottom: 1%;
+  margin-left: -10px;
+  padding-right: 20px;
+  width: 100%;
+  /* Make the item dispalyed at the center */
+  display:flex;
+  justify-content: center;
+  align-items:center;
+}
+
+#footer a {
+  text-decoration: underline;
+  color:black;
+}
+
+
+/* Footer making section over*/
+
+
+/* -------------------------------------------------------------------- */
+/* Media- zone starts */
+
+
+@media (max-width: 475px){
+
+  body {
+    font-family: 'Caveat', cursive, "sans-serif", cursive, "serif", cursive;
+    font-size: 12px;
+
+  }
+
+  .contact-tile a:hover {
+    color: #46a031;
+    background-color: black;
+
+  }
+
+  .contacts_container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items:center;
+    justify-content: space-around;
+
+  }
+
+  .contact-tile {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 50%;
+  }
+
+  .project-tile {
+    border: 2px solid #3dedac;
+    border-radius: 13px;
+    max-width: 202px;
+    max-height: 250px;
+  }
+
+  #navbar a{
+    font-size: 8px;
+  }
+
+  .navigation_bar {
+    width: 70%;
+  }
+
+#contacts{
+  margin-left: -10px;
+  padding-right: 20px;
+  width: 100%;
+}
+}
