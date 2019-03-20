@@ -5,8 +5,8 @@ import random
 
 app = Flask(__name__)
 
-ACCESS_TOKEN = "YOUR_ACCESS_TOKEN"
-VERIFY_TOKEN = "YOUR_VERIFY_TOKEN"
+ACCESS_TOKEN = "EAAIidDT4VXcBAAk8y7gDRjrY7sm50cmFztTh18etz5LFXqbnDm7ZCVy3vsUM2h1rj22Gv6PosVZCsQVsYEv8slwcnMZC7ywCPodOF4OJtnHrFGlYTVwLBnL29VUP5aeZATyYF5tYeZCvaTaRUUkc6oj4fwn1G3ZCKbLv5O0z4KlAZDZD"
+VERIFY_TOKEN = "TESTINGTOKEN152789"
 
 bot = Bot(ACCESS_TOKEN)
 
@@ -30,7 +30,7 @@ def receive_messege():
             for message in messagging:
                 if message.get('message'):
                 # определяем ID, чтобы знать куда отправлять ответ
-                recipient_id = message['sender']['id']
+                 recipient_id = message['sender']['id']
                 # если пользователь отправил text
                 if message['message'].get('text'):
                     response_sent_text = get_message()
@@ -59,7 +59,8 @@ def send_message(recipient_id, response):
 
 def get_message():
     '''Отправляет случайные сообщения пользователю.'''
-    sample_responses = ["Потрясающе!", "Я вами горжусь!", "Продолжайте в том же духе!", "Лучшее, что я когда-либо видел!"]
+    sample_responses = ["It's working!"]
+    # sample_responses = ["Потрясающе!", "Я вами горжусь!", "Продолжайте в том же духе!", "Лучшее, что я когда-либо видел!"]
     return random.choice(sample_responses)
 
 
