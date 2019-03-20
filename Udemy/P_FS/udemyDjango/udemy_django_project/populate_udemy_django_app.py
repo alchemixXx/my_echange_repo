@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 import os
-#os.environ.setdefault("DJANGO_SETTINGS_MODULE", 'udemy_django_project.settings')
-#os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'udemy_django_project.settings')
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'udemy_django_project.settings')
 
 import django
@@ -28,7 +26,7 @@ def populate(N=5):
 
         #create data
         fake_url = fakegen.url()
-        fake_data = fakegen.data()
+        fake_date = fakegen.date()
         face_name = fakegen.company()
 
         # create the web-page entry
@@ -36,10 +34,10 @@ def populate(N=5):
 
 
         #create a fake access record
-        acc_rec = AccessRecord.objects.get_or_create(name=webpage, data = fake_data)[0]
+        acc_rec = AccessRecord.objects.get_or_create(name=webpage, date = fake_date)[0]
 
-    if __name__ == '__main__':
-        print("populating scrip!")
-        populate(20)
-        print("populating complete")
+if __name__ == '__main__':
+    print("populating scrip!")
+    populate(20)
+    print("populating complete")
 

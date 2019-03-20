@@ -19,3 +19,10 @@ body {
 .divider {
   color: rgba(0, 0, 0, 0.5);
 }
+
+img{
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  /* border: 1px solid black; */
+}
