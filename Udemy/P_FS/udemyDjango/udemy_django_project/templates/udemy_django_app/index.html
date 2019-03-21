@@ -3,12 +3,32 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>first app</title>
-    <link rel="stylesheet", href="{% static 'css/style.css'%}"/>
+    <title>Django lvl two</title>
+    <link rel="stylesheet", href= "{% static 'css/style.css' %}" />
   </head>
   <body>
     <h1>Hello, this is index.html</h1>
-    {{ insert_me }}
+    <h2>Here are your access records</h2>
+    <div class="django_two">
+    {% if access_records %}
+      <table>
+        <thead>
+        <th>Site Name</th>
+        <th>Date Accessed</th>
+        </thead>
+
+
+    {% for acc in access_records %}
+    <tr>
+      <td>{{ acc.name }}</td>
+      <td>{{ acc.date }}</td>
+    </tr>
+    {% endfor %}
+    </table>
+    {% else %}
+    <p>No access to database</p>
+    {% endif %}
+      </div>
 <p>Now I'm adding some static files to this template</p>
   <img src="{% static 'images/pict.jpg' %}" alt="just some text, not a pict!"/>
 

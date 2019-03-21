@@ -1,28 +1,65 @@
 body {
-  background: #8FC7E0;
+  background: #265093;
   /* color: rgba(0, 0, 0, 0.5); */
+  font-size: 16px;
+  font-family: 'Mukta', sans-serif;
 }
 
 
-.btn, .btn-primary {
-  background-color: inherit;
-  color: rgba(0, 0, 0, 0.5);
-  border: 0px;
+
+/*!!! NAVBAR SECTION!!! */
+/* Managing the links inside navbar */
+nav a {
+  font-size: 1.2em;
+  color: #265093 !important;  /* Here I install color of the links inside of navbar. "Important" needs to cover text-colour from BOOTSTAP */
 }
 
-.btn-primary :hover {
-  background-color: white;
-  color: rgba(0, 0, 0, 0.9);
-  border: 0px;
+/* Behavior of links while they are hovering */
+nav a:hover {
+  color: #031e49;
+  font-size: 1.5em;
+  text-shadow: 0px 19px 38px rgba(0,0,0,0.30), 0px 5px 12px rgba(0,0,0,0.22);
 }
 
-.divider {
-  color: rgba(0, 0, 0, 0.5);
-}
 
-img{
-  margin-left: auto;
+.btn {
+  font-size: 1.2em;
+  color:#265093;
   margin-right: auto;
-  display: block;
-  /* border: 1px solid black; */
+  margin-left: auto;
 }
+
+.btn:hover {
+  background-color: #265093;
+}
+
+
+/* Logo at the navbar */
+.navbar-brand img{
+    max-width: 120px;  /* install size if the logo*/
+    /* border: 0px solid black; */
+}
+.navbar-brand {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+/*!!! NAVBAR SECTION IS OVER!!! */
+
+/* STRIP AT THE TOP styiling */
+.head_logo {
+  color: white;
+  text-align: center;
+  font-family: 'Gloria Hallelujah', cursive;
+  text-shadow: 0px 19px 38px rgba(255,255,255,0.30), 0px 5px 12px rgba(255,255,255,0.22);
+  margin-bottom: 0px;
+}
+
+.emph {
+  font-size: 1.8em;
+  text-shadow: 0 19px 38px rgba(255,255,255,0.30), 0 5px 12px rgba(255,255,255,0.22);
+}
+
+
+
+
+/* TESTING ZONE IS STARTED! */
