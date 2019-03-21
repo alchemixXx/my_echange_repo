@@ -1,0 +1,4 @@
+here is an article what I used when tried to create bot
+
+https://proglib.io/p/facebook-bot-with-python/
+
