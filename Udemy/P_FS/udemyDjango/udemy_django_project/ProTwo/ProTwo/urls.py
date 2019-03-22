@@ -21,5 +21,6 @@ from django.conf.urls import include
 urlpatterns = [
     re_path(r'^$', views.index, name = 'index'),
     path('admin/', admin.site.urls),
-    re_path(r'^help', include('AppTwo.urls')),
+    re_path(r'^help', views.help, name="help"),
+    path('users/', include('AppTwo.urls')),
 ]

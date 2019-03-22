@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Main page</title>
+  </head>
+  <body>
+  <h1>Hello, tester!</h1>
+
+    {{ users_request }}
+
+  {% if users_request %}
+  <ol>
+    {%for person in users_request %}
+    <li>User info</li>
+    <ul>
+    <li>First name: {{ person.user_first_name }}</li>
+    <li>Last name: {{ person.user_last_name }}</li>
+    <li>Email: {{ person.email}</li>
+    </ul>
+    {% endfor %}
+  </ol>
+
+
+  {% endif %}
+
+
+  </body>
+</html>
