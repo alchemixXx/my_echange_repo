@@ -4,6 +4,9 @@ body {
   font-size: 16px;
   font-family: 'Mukta', sans-serif;
   z-index: 100;
+  width: 100%;
+  height: 100%;
+
 }
 
 
@@ -70,21 +73,69 @@ nav a:hover {
 
 
 
+/* NEWS ZONE STRTED */
+.news_zone {
+  padding-top: 3%;
+}
 
-/* TESTING ZONE IS STARTED! */
-
-.wrapper {
-  /* display: inline-block; */
-  border: 5px solid black;
-  float: left;
-  /* padding-right: 15px; */
-  padding-left: 15px;
-  /* margin-right: 15px; */
-  margin-right: 25px;
-  z-index: 15;
+.news_img {
+  max-height: 200px;
+  padding-right: 25px;
+}
+.media img {
+max-height: 250px;
 }
 
 
-.news_zone {
-  border: 3px solid yellow;
+/* GENEREL INFO ZONE */
+.col-sm img {
+  max-width: 650px;
+}
+
+.main__info {
+  max-width: 1500px;
+}
+
+/* FIRST BACKGROUND PHOTO ZONE */
+.main_photo {
+  min-height: 100vh;
+  max-height: 100vh;
+  background-image: url("https://www.healthcareitnews.com/sites/hitn/files/genetics-charting-stock-712.jpg");
+
+/* Full height */
+height: 100%;
+
+/* Center and scale the image nicely */
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+/* border: 10px solid black; */
+}
+
+.main_photo h1{
+    padding-top: 40vh;
+    display: flex;
+    justify-content:center;
+    text-align: center;
+    align-content:center;
+    flex-direction:column; /* column | row */
+    text-shadow: 0 19px 38px rgba(255,255,255,0.30), 0 5px 12px rgba(255,255,255,0.22);
+}
+
+
+/* TESTING ZONE IS STARTED! */
+h2 {
+  text-align: center;
+}
+
+.media-body a {
+  color: #265093;
+}
+
+.media-body a :hover {
+  text-decoration: none;
+  color: #031e49;
+  /* font-size: 1.5em; */
+  text-shadow: 0px 19px 38px rgba(0,0,0,0.30), 0px 5px 12px rgba(0,0,0,0.22);
+
 }
