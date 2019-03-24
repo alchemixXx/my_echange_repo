@@ -3,12 +3,21 @@ body {
   /* color: rgba(0, 0, 0, 0.5); */
   font-size: 16px;
   font-family: 'Mukta', sans-serif;
+  z-index: 100;
 }
 
 
 
 /*!!! NAVBAR SECTION!!! */
 /* Managing the links inside navbar */
+
+.navbar {
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  z-index: 100;
+}
+
 nav a {
   font-size: 1.2em;
   color: #265093 !important;  /* Here I install color of the links inside of navbar. "Important" needs to cover text-colour from BOOTSTAP */
@@ -63,3 +72,19 @@ nav a:hover {
 
 
 /* TESTING ZONE IS STARTED! */
+
+.wrapper {
+  /* display: inline-block; */
+  border: 5px solid black;
+  float: left;
+  /* padding-right: 15px; */
+  padding-left: 15px;
+  /* margin-right: 15px; */
+  margin-right: 25px;
+  z-index: 15;
+}
+
+
+.news_zone {
+  border: 3px solid yellow;
+}
