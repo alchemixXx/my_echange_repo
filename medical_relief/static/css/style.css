@@ -87,6 +87,23 @@ max-height: 150px;
 }
 
 
+h2 {
+  text-align: center;
+}
+
+.media-body a {
+  color: #265093;
+}
+
+.media-body a :hover {
+  text-decoration: none;
+  color: #031e49;
+  /* font-size: 1.5em; */
+  text-shadow: 0px 19px 38px rgba(0,0,0,0.30), 0px 5px 12px rgba(0,0,0,0.22);
+
+}
+
+
 /* GENEREL INFO ZONE */
 .col-sm img {
   max-width: 650px;
@@ -107,7 +124,7 @@ max-height: 150px;
 .main_photo {
   min-height: 100vh;
   max-height: 100vh;
-  background-image: url("..//images/bg_1.JPG");
+  background-image: url("..//images/bg_1.jpg");
   /* background-image: url("https://www.healthcareitnews.com/sites/hitn/files/genetics-charting-stock-712.jpg"); */
 
 /* Full height */
@@ -151,18 +168,16 @@ background-size: cover;
 
 
 /* TESTING ZONE IS STARTED! */
-h2 {
-  text-align: center;
+
+/* .indigo {
+  color: white;
+} */
+
+.col-md-3 {
+  grid-template-columns: 50px 50px 50px 50px 50px;
 }
-
-.media-body a {
-  color: #265093;
-}
-
-.media-body a :hover {
-  text-decoration: none;
-  color: #031e49;
-  /* font-size: 1.5em; */
-  text-shadow: 0px 19px 38px rgba(0,0,0,0.30), 0px 5px 12px rgba(0,0,0,0.22);
-
+.btn-fb {
+  width: 50px;
+  height: 50px;
+  border: solid black 1px;
 }
