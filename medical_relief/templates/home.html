@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<!-- MAIN CONTENT ZONE STARTS -->
+      <div class="jumbotron">
+        <div class="container">
+
+
+<div class="main_info">
+            <hr class="my-4">
+  <h2>О нас</h2>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+      <img src="static/images/main_1.jpg" alt="one_photo">
+      </div>
+      <div class="col-sm">
+        <p class="lead">Основными задачами деятельности Фонда являются содействие в:</p>
+        <ul>
+          <li>проведении анализа зарубежного опыта медицинской практики и
+            на его основе внедрении в Украине наиболее эффективных методов диагностики и лечения,
+            а в случае сложности или невозможности их проведения в Украине,
+            содействие в получении квалифицированной медицинской помощи за рубежом;</li>
+            <li>установлении международных контактов, обмене опытом для повышения квалификации отечественных медицинских кадров;</li>
+            <li>обеспечении отечественных лечебных учреждений современной медицинской техникой, медицинскими расходными материалами, медикаментами.</li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p> -->
+  <p class="lead">На нашем сайте любой посетитель быстро и оперативно может получить консультацию по вопросам, связанным c реализацией вышеупомянутых задач.</p>
+
+  <p class="lead">Более подробную информацию о данном проекте Вы найдете в разделе <a href="#">О Фонде</a>.</p>
+  <p class="lead">Мы будем рады каждому Вашему посещению и постараемся быть Вам полезными.</p>
+
+
+</div>
+
+<!-- NEWS ZONES STARTS -->
+<hr class="my-4">
+<h2>Последние новости</h2>
+<div class="news_zone">
+<div class="left">
+  <ul class="list-unstyled">
+    <li class="media">
+      <img src="./static/images/2.png" class="mr-3" alt="...">
+      <div class="media-body">
+        <a href="#"><h4 class="mt-0 mb-1">List-based media object</h5></a>
+        <p class="lead">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+      </div>
+    </li>
+    <li class="media my-4">
+      <img src="./static/images/2.png" class="mr-3" alt="...">
+      <div class="media-body">
+        <a href="#"><h4 class="mt-0 mb-1">List-based media object</h5></a>
+        <p class="lead">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="right">
+  <ul class="list-unstyled">
+    <li class="media">
+      <img src="./static/images/2.png" class="mr-3" alt="...">
+      <div class="media-body">
+        <a href="#"><h4 class="mt-0 mb-1">List-based media object</h5></a>
+        <p class="lead">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+      </div>
+    </li>
+    <li class="media my-4">
+      <img src="./static/images/2.png" class="mr-3" alt="...">
+      <div class="media-body">
+        <a href="#"><h4 class="mt-0 mb-1">List-based media object</h5></a>
+        <p class="lead">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+      </div>
+    </li>
+    </ul>
+</div>
+  <p class="lead">Больше новостей Вы найдете в разделе <a href="#">Новости</a>.</p>
+</div>
+
+          <!-- <hr class="my-4">
+          <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+          <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> -->
+
+
+        </div>
+    </div>
+    {% for post in posts %}
+        <h1>{{ post.title }} </h1>
+        <p>By {{ post.author }} on {{post.date }}</p>
+        <p>{{ post.content }}</p>
+    {% endfor %}
+{% endblock content%}
+
+
+<!-- MAIN CONTENT ZONE STARTS -->
+      <div class="jumbotron">
+        <div class="container">
+
