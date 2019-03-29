@@ -124,7 +124,7 @@ h2 {
 .main_photo {
   min-height: 100vh;
   max-height: 100vh;
-  background-image: url("../images/bg_1.jpg");
+  background-image: url("./images/bg_1.jpg");
   /* background-image: url("https://www.healthcareitnews.com/sites/hitn/files/genetics-charting-stock-712.jpg"); */
 
 /* Full height */
@@ -174,6 +174,7 @@ background-size: cover;
   height: 39px;
   margin-right: 10px;
   margin-top: 5px;
+  /* background: white; */
 }
 
 .page-footer {

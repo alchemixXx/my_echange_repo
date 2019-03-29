@@ -2,16 +2,19 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-      {%if title%}
-          <title>ДОПОМОГА МЕДИЦИНІ - {{ title }}</title>
-      {% else %}
-          <title>ДОПОМОГА МЕДИЦИНІ</title>
-      {% endif %}
+    {%if title%}
+        <title>ДОПОМОГА МЕДИЦИНІ - {{ title }}</title>
+    {% else %}
+        <title>ДОПОМОГА МЕДИЦИНІ</title>
+    {% endif %}
     <!-- Bootstap  -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Personal style -->
-    <link rel="stylesheet" href="static/css/style.css">
+    <!-- <link rel="stylesheet" href="static/css/style.css"> -->
+
+    <!-- Flask style -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'style.css' )}}">
 
     <!-- Logo -->
     <link rel="icon" type="image/png" href="https://pbs.twimg.com/profile_images/853612004694609920/4W8yRDJA_400x400.jpg"/>
@@ -32,6 +35,9 @@
 
 
 <!-- Brand section of the site -->
+<header>
+
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#"><img src="static/images/logo_en_cut.png" alt="logo_of_Projects"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,12 +53,12 @@
           О Фонде
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Что мы делаем</a>
+          <a class="dropdown-item" href="{{posts.url}}/about_work">Что мы делаем</a>
           <a class="dropdown-item" href="#">Наша история</a>
           <a class="dropdown-item" href="#">Наша команда</a>
           <a class="dropdown-item" href="#">Стать членом нашей команды</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Еще...</a>
+          <a class="dropdown-item" href="{{posts.url}}/about">Еще...</a>
         </div>
 
       <li class="nav-item dropdown">
@@ -132,6 +138,10 @@
 
   </div>
 </nav>
+</header>
+
+<main>
+
 
 <div class="main_photo">
   <!-- <img id="back" src="https://www.healthcareitnews.com/sites/hitn/files/genetics-charting-stock-712.jpg" alt=""> -->
@@ -140,24 +150,10 @@
 
 </div>
 
-{% block content %}  {% endblock %}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<main>
+  {% block content %}  {% endblock %}
+</main>
 
 
 
@@ -174,10 +170,12 @@
             <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
 
               <!-- Content -->
-              <h5 class="font-weight-bold text-uppercase mb-4">Footer Content</h5>
+              <h5 class="font-weight-bold text-uppercase mb-4">ДОПОМОГА МЕДИЦИНІ</h5>
               <p>Here you can use rows and columns here to organize your footer content.</p>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit amet numquam iure provident voluptate esse
                 quasi, veritatis totam voluptas nostrum.</p>
+                <p>© 2018 Copyright:
+                  <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a></p>
 
             </div>
             <!-- Grid column -->
@@ -266,24 +264,18 @@
 
               <!-- Facebook -->
               <a type="button" class="btn-floating btn-fb">
-                <i class="fab fa-facebook-f">saymiay</i>
+                <i class="fab fa-facebook-f"><img src="static/images/facebook3.png" alt="Facebook"></i>
               </a>
               <!-- Twitter -->
               <a type="button" class="btn-floating btn-tw">
-                <i class="fab fa-twitter"></i>
+                <i class="fab fa-twitter"><img src="static/images/twitter3.png" alt="Twitter"></i>
               </a>
-              <!-- Google +-->
-              <a type="button" class="btn-floating btn-gplus">
-                <i class="fab fa-google-plus-g"></i>
-              </a>
+
               <!--Linkedin -->
               <a type="button" class="btn-floating li-ic">
-                <i class="fab fa-linkedin-in fa-lg white-text mr-4"> </i>
+                <i class="fab fa-linkedin-in fa-lg white-text mr-4"><img src="static/images/linked3.png" alt="LinkedIn"></i>
               </a>
-              <!-- Dribbble -->
-              <a type="button" class="btn-floating btn-dribbble">
-                <i class="fab fa-dribbble"></i>
-              </a>
+
 
             </div>
             <!-- Grid column -->
@@ -295,9 +287,9 @@
         <!-- Footer Links -->
 
         <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">© 2018 Copyright:
+        <!-- <div class="footer-copyright text-center py-3">© 2018 Copyright:
           <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
-        </div>
+        </div> -->
         <!-- Copyright -->
 
       </footer>
