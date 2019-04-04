@@ -1,0 +1,194 @@
+body {
+  background: #b3c4ff;
+  /* color: rgba(0, 0, 0, 0.5); */
+  font-size: 16px;
+  font-family: 'Mukta', sans-serif;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+
+}
+
+
+
+/*!!! NAVBAR SECTION!!! */
+/* Managing the links inside navbar */
+
+.navbar {
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  z-index: 100;
+}
+
+nav a {
+  font-size: 1.2em;
+  color: #265093 !important;  /* Here I install color of the links inside of navbar. "Important" needs to cover text-colour from BOOTSTAP */
+}
+
+/* Behavior of links while they are hovering */
+nav a:hover {
+  color: #031e49;
+  font-size: 1.5em;
+  text-shadow: 0px 19px 38px rgba(0,0,0,0.30), 0px 5px 12px rgba(0,0,0,0.22);
+}
+
+
+.btn {
+  font-size: 1.2em;
+  color:#265093;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.btn:hover {
+  background-color: #265093;
+}
+
+
+/* Logo at the navbar */
+.navbar-brand img{
+    max-width: 120px;  /* install size if the logo*/
+    /* border: 0px solid black; */
+}
+.navbar-brand {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+/*!!! NAVBAR SECTION IS OVER!!! */
+
+/* STRIP AT THE TOP styiling */
+.head_logo {
+  color: white;
+  text-align: center;
+  font-family: 'Gloria Hallelujah', cursive;
+  text-shadow: 0px 19px 38px rgba(255,255,255,0.30), 0px 5px 12px rgba(255,255,255,0.22);
+  margin-bottom: 0px;
+}
+
+.emph {
+  font-size: 1.8em;
+  text-shadow: 0 19px 38px rgba(255,255,255,0.30), 0 5px 12px rgba(255,255,255,0.22);
+}
+
+
+
+/* NEWS ZONE STRTED */
+.news_zone {
+  padding-top: 3%;
+}
+
+.news_img {
+  max-height: 200px;
+  padding-right: 25px;
+}
+.media img {
+max-height: 150px;
+}
+
+
+h2 {
+  text-align: center;
+}
+
+.media-body a {
+  color: #265093;
+}
+
+.media-body a :hover {
+  text-decoration: none;
+  color: #031e49;
+  /* font-size: 1.5em; */
+  text-shadow: 0px 19px 38px rgba(0,0,0,0.30), 0px 5px 12px rgba(0,0,0,0.22);
+
+}
+
+
+/* GENEREL INFO ZONE */
+.col-sm img {
+  max-width: 650px;
+}
+
+.main__info {
+  max-width: 1500px;
+}
+
+.news_zone {
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-column-gap: 5px;
+}
+
+/* FIRST BACKGROUND PHOTO ZONE */
+.main_photo {
+  min-height: 100vh;
+  max-height: 100vh;
+  background-image: url("../images/bg_1.jpg");
+  /* background-image: url("https://www.healthcareitnews.com/sites/hitn/files/genetics-charting-stock-712.jpg"); */
+
+/* Full height */
+height: 100%;
+
+/* Center and scale the image nicely */
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+/* border: 10px solid black; */
+}
+
+.main_photo h1{
+    padding-top: 35vh;
+    display: flex;
+    justify-content:center;
+    text-align: center;
+    align-content:center;
+    flex-direction:column; /* column | row */
+    text-shadow: 2px 3px 15px rgba(255,255,255,0.92), 0 3px 28px rgba(255,255,255,0.92);
+    /* text-shadow: 0 19px 38px rgba(255,255,255,0.90), 0 5px 12px rgba(255,255,255,0.92); */
+    /* box-shadow: 0px 0px 4px 2px rgba(255,255,255,0.99); */
+}
+
+
+/* !!! MEDIA ZONE STARTED !!! */
+
+@media (max-width: 1024px) {
+  .news_zone {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+  }
+
+
+  .navbar-brand img{
+      max-width: 80px;  /* install size if the logo*/
+      /* border: 0px solid black; */
+}
+}
+
+
+/* TESTING ZONE IS STARTED! */
+
+.btn-fb, .li-ic, .btn-tw {
+  width: 39px;
+  height: 39px;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+.page-footer {
+  margin-top: -35px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+
+.fab img {
+  max-width: 42px;
+  margin-left: -2px;
+  margin-top: -2px;
+}
+
+.footer-copyright {
+  margin-top: -15px;
+}
