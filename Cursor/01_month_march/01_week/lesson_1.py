@@ -32,14 +32,24 @@ def multiple_ints_with_conversion(first_value: Any, second_value: Any) -> int:
             print("Not valid input data")
         >>> "Not valid input data"
     """
-    # try:
-    if (type(first_value) == int or type(first_value) == float or type(first_value) == str) and \
-            (type(second_value) == int or type(second_value) == float or type(second_value) == str):
-        return int(first_value) * int(second_value)
-    else:
-        raise OurAwesomeException
-    # except OurAwesomeException:
-    #     print("Not valid input data")
+#     # try:
+#     if (type(first_value) == int or type(first_value) == float or type(first_value) == str) and \
+#             (type(second_value) == int or type(second_value) == float or type(second_value) == str):
+#         return int(first_value) * int(second_value)
+#     else:
+#         raise OurAwesomeException
+#     # except OurAwesomeException:
+#     #     print("Not valid input data")
+#
+#
+# multiple_ints_with_conversion(True, 2)
 
 
-multiple_ints_with_conversion(True, 2)
+# first = 120
+# print(type(first))
+# # first = int(first)
+# # print(type(first))
+#
+#
+# if 120 == int(first):
+#     print('yes')

@@ -29,5 +29,17 @@ def about():
     return render_template('about.html', posts = posts)
 
 
+@app.route("/history")
+def history():
+    return render_template('history.html', posts = posts)
+
+
 if __name__ == "__main__":
     app.run(debug=True)
+
+
+
+
+
+first = "120"
+print(type(first))
