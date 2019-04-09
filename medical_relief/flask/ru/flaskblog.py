@@ -24,9 +24,9 @@ def home():
     return render_template('home.html', posts = posts)
 
 
-@app.route("/about")
-def about():
-    return render_template('about.html', posts = posts)
+@app.route("/about_us")
+def about_us():
+    return render_template('about_us.html', posts = posts)
 
 
 @app.route("/history")
@@ -38,8 +38,3 @@ if __name__ == "__main__":
     app.run(debug=True)
 
 
-
-
-
-first = "120"
-print(type(first))
