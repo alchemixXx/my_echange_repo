@@ -33,6 +33,18 @@ def about_us():
 def history():
     return render_template('history.html', posts = posts)
 
+@app.route("/team")
+def team():
+    return render_template('team.html', posts = posts)
+
+@app.route("/member_plus")
+def member_plus():
+    return render_template('member_plus.html', posts = posts)
+
+@app.route("/more_about")
+def more_about():
+    return render_template('more_about.html', posts = posts)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
