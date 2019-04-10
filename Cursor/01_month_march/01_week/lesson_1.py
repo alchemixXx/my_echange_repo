@@ -53,3 +53,8 @@ def multiple_ints_with_conversion(first_value: Any, second_value: Any) -> int:
 #
 # if 120 == int(first):
 #     print('yes')
+
+
+
+new_dict = {1 : "privet", "bab": "asdasda"}
+print(new_dict)
