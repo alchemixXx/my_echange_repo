@@ -1,8 +1,22 @@
 from flask import Flask, render_template, url_for
+from flask_sqlalchemy import SQLAlchemy
+from flask_admin import Admin
+from flask_admim.contrib.sqla import ModelView
 
 app = Flask(__name__)
-
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///D:\01_personal_documents\02_coding\medical_relief\flask\ru\news.db'
 # this is second test comment
+# DB settings
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///news.db'  # setting location to db
+
+app.config['SECRET_KEY'] = 'my_secret'
+
+db = SQLAlchemy(app)  # connection with DB sqlite
+
+class New(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+
 
 posts = [
     {
