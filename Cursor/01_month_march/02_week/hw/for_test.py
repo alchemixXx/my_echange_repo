@@ -25,24 +25,36 @@ value3 = 'SuperMan'
 
 key6 = 'age'
 
+
+redundant_keys = ['sex', 'name']
+
 # task 1
 def task_1_fix_names_start_letter(data):
-    # return [ for member in data]
-    # print('Hello world')
+    # for member in data:
+    #     if 'name' in member:
+    #         member["name"] = member["name"].capitalize()
+    # return data
+    # return [item for member in data for item in member]
+    # return [member['name'].capitalize() if 'name' in member else member for member in data ]
+    return [{key:(value.capitalize() if key == 'name' else value) for (key, value) in member.items()} for member in data]
+
+
+"""
+flatten_matrix = [val
+                  for sublist in matrix
+                  for val in sublist]
+                  """
+
+
+# # task 2 - Done
+def task_2_remove_dict_fields(data, redundant_keys):
     for member in data:
-        member["name"] = member["name"].capitalize()
-    # print(data)
+        for key in redundant_keys:
+            member.pop(key)
     return data
-    # pass
-
-
-
-# # task 2
-# redundant_keys = ['sex', 'name']
-# for member in data:
-#     for key in redundant_keys:
-#         member.pop(key)
-# print(data)
+    # return [item for member in data for item in member]
+    # return [map(lambda: member.pop(), [key for key in redundant_keys]) for member in data]
+    # return [{key:value for key, value in member.items() if key not in redundant_keys} for member in data]
 
 
 # task 3 - DONE
@@ -229,6 +241,8 @@ def task_11_create_list_of_random_characters():
     # pass
 
 # print(task_1_fix_names_start_letter(data))
+print(task_2_remove_dict_fields(data, redundant_keys))
+
 # print(task_6_min_value_list_of_dicts(data, key6))
 # print(task_3_find_item_via_value(data, value3))
 # print(task_5_min_value_strings(data6))
@@ -241,4 +255,5 @@ def task_11_create_list_of_random_characters():
 # print(next(test10))
 # print(task_10_generator_of_simple_numbers())
 
-print(task_11_create_list_of_random_characters())
+# print(task_11_create_list_of_random_characters())
+

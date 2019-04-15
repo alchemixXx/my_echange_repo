@@ -17,10 +17,14 @@ def task_1_fix_names_start_letter(data: DT) -> DT:
         >>> [{'name': 'Alex', 'age': 26}, {'name': 'Denys', 'age': 89}]
     """
     #pass
-    for member in data:
-        if 'name' in member:
-            member["name"] = member["name"].capitalize()
-    return data
+    # for member in data:
+    #     if 'name' in member:
+    #         member["name"] = member["name"].capitalize()
+    # return data
+
+
+    return [{key: (value.capitalize() if key == 'name' else value) for (key, value) in member.items()} for member in
+            data]
 
 
 
@@ -32,11 +36,12 @@ def task_2_remove_dict_fields(data: DT, redundant_keys: List[str]) -> DT:
        remove_dict_field([{'name': 'Alex', 'age': 26}, {'name': 'denys', 'age': 89}], 'age')
         >>> [{'name': 'Alex'}, {'name': 'denys'}]
     """
-    for member in data:
-        for key in redundant_keys:
-            member.pop(key)
-    return data
-    # pass
+    # for member in data:
+    #     for key in redundant_keys:
+    #         member.pop(key)
+    # return data
+    return [{key: value for key, value in member.items() if key not in redundant_keys} for member in data]
+
 
 
 
@@ -89,11 +94,7 @@ def task_6_min_value_list_of_dicts(data: DT, key: str) -> ST:
     """
     # return min([member.get('age', None) for member in data if 'age' in member.keys()])
     # minimal = min([member.get('age', None) for member in data if 'age' in member.keys()])
-    minimal = min([member.get('age', None) for member in data if 'age' in member.keys()])
-
-    # for member in data:
-    #     if minimal in member.values():
-    #         return member
+    minimal = min([member.get('age', None) for member in data if 'age' in member.keys()]
     return [member for member in data if minimal in member.values()][0]
 
     # pass
@@ -103,13 +104,9 @@ def task_7_max_value_list_of_lists(data: List[List[int]]) -> int:
     """
     Find max value from list of lists
     """
-    # new_list = []
-    # for list in data:
-    #     for item in list:
-    #         new_list.append(item)
-    # return max(new_list)
+
     return max([item for sublist in data for item in sublist])
-    # pass
+
 
 
 def task_8_sum_of_ints(data: List[int]) -> int:
@@ -117,7 +114,6 @@ def task_8_sum_of_ints(data: List[int]) -> int:
     Find sum of all items in given list
     """
     return sum(data)
-    # pass
 
 
 def task_9_sum_characters_positions(text: str) -> int:
@@ -134,7 +130,7 @@ def task_9_sum_characters_positions(text: str) -> int:
 
     """
     return sum([ord(item) for item in text])
-    # pass
+
 
 
 def task_10_generator_of_simple_numbers() -> Generator[int, None, None]:
@@ -169,4 +165,4 @@ def task_11_create_list_of_random_characters() -> List[str]:
 
     """
     return [random.choice(string.ascii_lowercase) for _ in range(20)]
-    # pass
+
