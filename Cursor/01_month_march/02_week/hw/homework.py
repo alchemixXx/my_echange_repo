@@ -1,4 +1,6 @@
 from typing import List, Dict, Union, Generator
+import random
+import string
 
 # We will work with such dicts
 ST = Dict[str, Union[str, int]]
@@ -16,7 +18,8 @@ def task_1_fix_names_start_letter(data: DT) -> DT:
     """
     #pass
     for member in data:
-        member["name"] = member["name"].capitalize()
+        if 'name' in member:
+            member["name"] = member["name"].capitalize()
     return data
 
 
@@ -130,7 +133,8 @@ def task_9_sum_characters_positions(text: str) -> int:
         >>> 532
 
     """
-    pass
+    return sum([ord(item) for item in text])
+    # pass
 
 
 def task_10_generator_of_simple_numbers() -> Generator[int, None, None]:
@@ -144,7 +148,19 @@ def task_10_generator_of_simple_numbers() -> Generator[int, None, None]:
         next(a)
         >>> 3
     """
-    pass
+    i = 2
+    yield i
+    while True:
+        i += 1
+        if i == 3 or i == 5 or i == 7 or i == 11:
+            yield i
+        elif i % 2 == 0 or i % 3 == 0 or i % 5 == 0 or i % 7 == 0 or i % 11 == 0:
+            continue
+        elif i > 200:
+            break
+        else:
+            yield i
+    # pass
 
 
 def task_11_create_list_of_random_characters() -> List[str]:
@@ -152,4 +168,5 @@ def task_11_create_list_of_random_characters() -> List[str]:
     Create list of 20 elements where each element is random letter from latin alphabet
 
     """
-    pass
+    return [random.choice(string.ascii_lowercase) for _ in range(20)]
+    # pass

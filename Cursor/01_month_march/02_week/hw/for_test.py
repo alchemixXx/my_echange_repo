@@ -1,4 +1,5 @@
-
+import random
+import string
 
 data = [{'age': 43, 'name': 'denis', 'sex': 'male'},
               {'age': 49, 'name': 'Roman', 'sex': 'male'},
@@ -143,6 +144,7 @@ def task_7_max_value_list_of_lists(data) -> int:
     # pass
 
 
+# Task 8 - Done
 
 def task_8_sum_of_ints(data) -> int:
     """
@@ -152,7 +154,7 @@ def task_8_sum_of_ints(data) -> int:
     return sum(data)
     # pass
 
-
+# Task 9 - Done
 def task_9_sum_characters_positions(text: str) -> int:
     """
     Please read first about ascii table.
@@ -166,7 +168,65 @@ def task_9_sum_characters_positions(text: str) -> int:
         >>> 532
 
     """
-    pass
+    # print(data)
+    return sum([ord(item) for item in text])
+    # print("Hello, world")
+    # pass
+
+# Task 10 - Done
+def task_10_generator_of_simple_numbers():
+    """
+    Return generator of simple numbers
+    Stop then iteration if returned value is more than 200
+    Examples:
+        a = task_10_generator_of_simple_numbers()
+        next(a)
+        >>> 2
+        next(a)
+        >>> 3
+    """
+    # pass
+    i = 2
+    yield i
+    while True:
+        i += 1
+        if i == 3 or i == 5 or i == 7:
+            yield i
+        elif i % 2 == 0 or i % 3 == 0 or i % 5 == 0 or i % 7 == 0:
+            continue
+        elif i > 200:
+            break
+        else:
+            yield i
+
+
+"""
+def interger_values():
+    i = 0
+    while True:
+        yield i
+        i += 1
+        yield str(i)
+
+our_gen = interger_values()
+
+# print(next(our_gen))
+
+for i in range(100):
+    print(id(our_gen))
+    step_value = next(our_gen)
+    print(step_value)
+"""
+
+# Task 11
+
+def task_11_create_list_of_random_characters():
+    """
+    Create list of 20 elements where each element is random letter from latin alphabet
+
+    """
+    return [random.choice(string.ascii_lowercase) for _ in range(21)]
+    # pass
 
 # print(task_1_fix_names_start_letter(data))
 # print(task_6_min_value_list_of_dicts(data, key6))
@@ -174,4 +234,11 @@ def task_9_sum_characters_positions(text: str) -> int:
 # print(task_5_min_value_strings(data6))
 # print(task_7_max_value_list_of_lists(data7))
 # print(task_8_sum_of_ints(data8))
-print(task_9_sum_characters_positions(data9))
+# print(task_9_sum_characters_positions(data9))
+
+# test10 = task_10_generator_of_simple_numbers()
+#
+# print(next(test10))
+# print(task_10_generator_of_simple_numbers())
+
+print(task_11_create_list_of_random_characters())

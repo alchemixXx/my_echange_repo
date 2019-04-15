@@ -133,7 +133,7 @@ class DictComprehension(unittest.TestCase):
         for student in actual_result:
             self.assertTrue(student['name'][0].isupper())
 
-    def test_task_9_empty_fields(self):
+    def test_task_1_empty_fields(self):
         given_data = [
             {'age': 43, 'name': 'denis'},
             {'age': 49, 'name': 'Roman'},
