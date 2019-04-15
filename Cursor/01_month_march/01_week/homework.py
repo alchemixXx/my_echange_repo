@@ -155,6 +155,7 @@ def simple_sort(data: List[int]) -> List[list]:
         >>> [1, 2, 2, 3, 6, 7, 9]
     Returns:
     """
+
     new_list = []
     while len(data) > 0:
         new_min = None
@@ -167,3 +168,17 @@ def simple_sort(data: List[int]) -> List[list]:
         new_list.append(new_min)
         data.remove(new_min)
     return new_list
+
+# def simple_sort(listok: List[int]) -> List[list]:
+#     l2 = []
+#     while len(listok) > 0:
+#         sp = None
+#         for r in listok:
+#             if sp == None:
+#                 sp = r
+#             else:
+#                 if r < sp:
+#                     sp = r
+#         l2.append(sp)
+#         listok.remove(sp)
+#     return l2
