@@ -1,6 +1,8 @@
 import random
 import string
 
+import functools
+
 data = [{'age': 43, 'name': 'denis', 'sex': 'male'},
               {'age': 49, 'name': 'Roman', 'sex': 'male'},
               {'age': 36, 'name': 'Godzilla', 'sex': 'male'},
@@ -97,13 +99,23 @@ def task_3_find_item_via_value(data, value):
 
 def task_5_min_value_strings(data) -> str:
     created_dict = {item:len(str(item)) for item in data}
-    # min_value = min(created_dict.values())
-    return list(created_dict.keys())[list(created_dict.values()).index(min(created_dict.values()))]
+    # return list(created_dict.keys())[list(created_dict.values()).index(min(created_dict.values()))]
     # return min([len(str(x)) for x in data])
     # return list(created_dict.values()).index(min(created_dict.values()))
     # return list(created_dict.keys())    [list(created_dict.values()).       index(min(created_dict.values()))]
     #       ['So', 'the', 'normal',]        #[2, 3, 6, 3, 3]                         index of searched element
     # [list(created_dict.values()).index(min(created_dict.values()))]  ==> [15]
+    # {k:v for k,v in data if min({item:len(str(item)) for item in data}.values()) == v}
+    print(created_dict)
+    return [str(key) for (key,value) in {item:len(str(item)) for item in data}.items() if value == min([len(str(x)) for x in data])][0]
+
+
+    # return [x for x in data if len(str(x)) == min(map(lambda x: len(str(x)), data))]
+    # return data.index(min(map(lambda x: str(x), data)))
+
+
+
+
 
 
 
@@ -200,7 +212,7 @@ def task_10_generator_of_simple_numbers():
     # pass
     i = 2
     yield i
-    while True:
+    while i <= 200:
         i += 1
         if i == 3 or i == 5 or i == 7:
             yield i
@@ -241,11 +253,11 @@ def task_11_create_list_of_random_characters():
     # pass
 
 # print(task_1_fix_names_start_letter(data))
-print(task_2_remove_dict_fields(data, redundant_keys))
+# print(task_2_remove_dict_fields(data, redundant_keys))
 
 # print(task_6_min_value_list_of_dicts(data, key6))
 # print(task_3_find_item_via_value(data, value3))
-# print(task_5_min_value_strings(data6))
+print(task_5_min_value_strings(data6))
 # print(task_7_max_value_list_of_lists(data7))
 # print(task_8_sum_of_ints(data8))
 # print(task_9_sum_characters_positions(data9))

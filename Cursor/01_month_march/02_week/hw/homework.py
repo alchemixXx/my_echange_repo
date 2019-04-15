@@ -52,9 +52,6 @@ def task_3_find_item_via_value(data: DT, value) -> DT:
         find_item_via_value([{'name': 'Alex', 'age': 26}, {'name': 'denys', 'age': 89}], 26)
         >>> [{'name': 'Alex', 'age': 26}]
     """
-    # for member in data:
-    #     if value in member.values():
-    #         return [{key: value for key, value in member.items()}]
     return [({key: value for key, value in member.items()}) for member in data if value in member.values()]
 
 
@@ -64,26 +61,25 @@ def task_4_min_value_integers(data: List[int]) -> int:
     """
     Find and return minimum value from list
     """
-    # return min([x['age'] for x in data])
-    # if len(data) != 0:
-    #     return min([x['age'] for x in data])
-    # pass
-    try:
-        return min([x['age'] for x in data])
-    except TypeError:
-        return min(data)
-    except:
-        return None
+
+    return min(data, default=None)
 
 
 def task_5_min_value_strings(data: List[Union[str, int]]) -> str:
     """
     Find the longest string
     """
-    created_dict = {str(item):len(str(item)) for item in data}
+    # return [str(x) for x in data if len(str(x)) == min(map(lambda x: len(str(x)), data), default=None)][0]
+
+    # created_dict = {str(item):len(str(item)) for item in data}
+    # try:
+    #     return list(created_dict.keys())[list(created_dict.values()).index(min(created_dict.values(), default=None))]
+    # except:
+    #     return None
     try:
-        return list(created_dict.keys())[list(created_dict.values()).index(min(created_dict.values()))]
-    except:
+        return [str(key) for (key, value) in {item: len(str(item)) for item in data}.items() if
+            value == min([len(str(x)) for x in data])][0]
+    except IndexError:
         return None
 
 def task_6_min_value_list_of_dicts(data: DT, key: str) -> ST:
@@ -92,12 +88,9 @@ def task_6_min_value_list_of_dicts(data: DT, key: str) -> ST:
     Returns:
 
     """
-    # return min([member.get('age', None) for member in data if 'age' in member.keys()])
-    # minimal = min([member.get('age', None) for member in data if 'age' in member.keys()])
-    minimal = min([member.get('age', None) for member in data if 'age' in member.keys()]
-    return [member for member in data if minimal in member.values()][0]
+    # return [member for member in data if (min([member.get('age', None) for member in data if 'age' in member.keys()])) in member.values()][0]
+    return [member for member in data if (min(map(lambda x: x.get('age', 10000), data))) in member.values()][0]
 
-    # pass
 
 
 def task_7_max_value_list_of_lists(data: List[List[int]]) -> int:
@@ -144,19 +137,24 @@ def task_10_generator_of_simple_numbers() -> Generator[int, None, None]:
         next(a)
         >>> 3
     """
-    i = 2
-    yield i
-    while True:
-        i += 1
-        if i == 3 or i == 5 or i == 7 or i == 11:
+    # i = 2
+    # yield i
+    # while i <= 200:
+    #     i += 1
+    #     if i == 3 or i == 5 or i == 7 or i == 11:
+    #         yield i
+    #     elif i % 2 == 0 or i % 3 == 0 or i % 5 == 0 or i % 7 == 0 or i % 11 == 0:
+    #         continue
+    #     else:
+    #         yield i
+    for i in range(2, 201):
+        if i == 2 or i == 3 or i == 5 or i == 7 or i == 11:
             yield i
         elif i % 2 == 0 or i % 3 == 0 or i % 5 == 0 or i % 7 == 0 or i % 11 == 0:
             continue
-        elif i > 200:
-            break
         else:
             yield i
-    # pass
+
 
 
 def task_11_create_list_of_random_characters() -> List[str]:
