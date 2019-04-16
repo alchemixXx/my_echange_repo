@@ -1,5 +1,6 @@
 import random
 import string
+import math
 
 import functools
 
@@ -210,18 +211,34 @@ def task_10_generator_of_simple_numbers():
         >>> 3
     """
     # pass
-    i = 2
-    yield i
-    while i <= 200:
-        i += 1
-        if i == 3 or i == 5 or i == 7:
-            yield i
-        elif i % 2 == 0 or i % 3 == 0 or i % 5 == 0 or i % 7 == 0:
-            continue
-        elif i > 200:
-            break
-        else:
-            yield i
+    # i = 2
+    # yield i
+    # while i <= 200:
+    #     i += 1
+    #     if i == 3 or i == 5 or i == 7:
+    #         yield i
+    #     elif i % 2 == 0 or i % 3 == 0 or i % 5 == 0 or i % 7 == 0:
+    #         continue
+    #     elif i > 200:
+    #         break
+    #     else:
+    #         yield i
+
+
+    # for number in range(2, 201):
+    #     checker = 0
+    #     for test_number in range(2, number):
+    #         if number % test_number == 0:
+    #             checker = 1
+    #             continue
+    #     if checker == 0:
+    #         yield number
+
+    for number in range(2, 201):
+        if all(filter(lambda x: number % x == 0, [x for x in range(2, number)])):
+            print(number)
+
+
 
 
 """
@@ -257,7 +274,7 @@ def task_11_create_list_of_random_characters():
 
 # print(task_6_min_value_list_of_dicts(data, key6))
 # print(task_3_find_item_via_value(data, value3))
-print(task_5_min_value_strings(data6))
+# print(task_5_min_value_strings(data6))
 # print(task_7_max_value_list_of_lists(data7))
 # print(task_8_sum_of_ints(data8))
 # print(task_9_sum_characters_positions(data9))
@@ -265,7 +282,7 @@ print(task_5_min_value_strings(data6))
 # test10 = task_10_generator_of_simple_numbers()
 #
 # print(next(test10))
-# print(task_10_generator_of_simple_numbers())
+print(task_10_generator_of_simple_numbers())
 
 # print(task_11_create_list_of_random_characters())
 
