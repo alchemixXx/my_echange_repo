@@ -1,7 +1,6 @@
 from typing import List, Dict, Union, Generator
 import random
 import string
-import math
 
 # We will work with such dicts
 ST = Dict[str, Union[str, int]]
@@ -17,7 +16,6 @@ def task_1_fix_names_start_letter(data: DT) -> DT:
         fix_names_start_letters([{'name': 'Alex', 'age': 26}, {'name': 'denys', 'age': 89}])
         >>> [{'name': 'Alex', 'age': 26}, {'name': 'Denys', 'age': 89}]
     """
-    #pass
     # for member in data:
     #     if 'name' in member:
     #         member["name"] = member["name"].capitalize()
@@ -138,21 +136,16 @@ def task_10_generator_of_simple_numbers() -> Generator[int, None, None]:
         next(a)
         >>> 3
     """
-    # for i in range(2, 201):
-    #     if i == 2 or i == 3 or i == 5 or i == 7 or i == 11:
-    #         yield i
-    #     elif i % 2 == 0 or i % 3 == 0 or i % 5 == 0 or i % 7 == 0 or i % 11 == 0:
-    #         continue
-    #     else:
-    #         yield i
-    for number in range(2, 201):
-        checker = 0
-        for test_number in range(2, number):
-            if number % test_number == 0:
-                checker = 1
-                continue
-        if checker == 0:
-            yield number
+    # for number in range(2, 201):
+    #     checker = 0
+    #     for test_number in range(2, number):
+    #         if number % test_number == 0:
+    #             checker = 1
+    #             continue
+    #     if checker == 0:
+    #         yield number
+
+    return (number for number in range(2,201)if all([1 if number % x != 0 else 0 for x in range(2, number)]))
 
 
 

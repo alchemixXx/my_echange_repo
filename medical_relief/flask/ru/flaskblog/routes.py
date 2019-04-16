@@ -1,27 +1,6 @@
-from flask import Flask, render_template, url_for
-from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime
-# from flask_admin import Admin
-# from flask_admim.contrib.sqla import ModelView
-
-app = Flask(__name__)
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///D:\01_personal_documents\02_coding\medical_relief\flask\ru\news.db'
-
-# DB settings
-app.config['SECRET_KEY'] = 'v1g5x7a1u0h8m3p6j3b1z9h7u3k6f4'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///news.db'  # setting location to db
-db = SQLAlchemy(app)  # connection with DB sqlite
-
-
-class New(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(128), unique=True, nullable=False)
-    body = db.Column(db.Text, nullable=False)
-    image_file = db.Column(db.String(20), nullable=False, default='default.jpg')
-    pub_date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
-
-    def __repr__(self):
-        return f"New('{self.title}', '{self.pub_date}')"
+from flaskblog.models import New
+from flask import Flask, render_template, url_for, flash, redirect
+from flaskblog import app
 
 posts = [
     {
@@ -160,5 +139,7 @@ def contacts():
 
 
 
-if __name__ == "__main__":
-    app.run(debug=True)
+@app.route("/admin")
+def login():
+    return render_template('00_admin.html', posts = posts)
+

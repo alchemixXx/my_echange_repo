@@ -234,9 +234,10 @@ def task_10_generator_of_simple_numbers():
     #     if checker == 0:
     #         yield number
 
-    for number in range(2, 201):
-        if all(filter(lambda x: number % x == 0, [x for x in range(2, number)])):
-            print(number)
+    # for number in range(2, 201):
+    #     if all([1 if number % x != 0 else 0 for x in range(2, number)]):
+    #         print(number)
+    return (number for number in range(2,201)if all([1 if number % x != 0 else 0 for x in range(2, number)]))
 
 
 
@@ -283,6 +284,11 @@ def task_11_create_list_of_random_characters():
 #
 # print(next(test10))
 print(task_10_generator_of_simple_numbers())
+x = task_10_generator_of_simple_numbers()
+print(next(x))
+print(next(x))
+print(next(x))
+print(next(x))
 
 # print(task_11_create_list_of_random_characters())
 
