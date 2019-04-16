@@ -1,6 +1,7 @@
 from flaskblog.models import New
-from flask import Flask, render_template, url_for, flash, redirect
+from flask import Flask, render_template, url_for, flash, redirect, flash
 from flaskblog import app
+from forms import LoginForm
 
 posts = [
     {
@@ -141,5 +142,10 @@ def contacts():
 
 @app.route("/admin")
 def login():
-    return render_template('00_admin.html', posts = posts)
+    form = LoginForm()
+    if form.validate_on_submit():
+        flash(f"Welcome, {form.username.data}!")
+        return redirect(url_for('home'))
+    return render_template('00_login.html', title = "Login-admin", form=form)
+    # return render_template('00_admin.html', posts = posts)
 

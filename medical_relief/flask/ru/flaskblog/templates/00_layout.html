@@ -143,6 +143,9 @@
 
 
 <main>
+  {% with messages = get_flashed_messages (with_categories=true) %}
+  {% if messages %}
+  {% endif %}
   {% block content %}  {% endblock %}
 </main>
 

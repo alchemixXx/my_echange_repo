@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from forms import LoginForm
 
 
 
@@ -11,7 +12,7 @@ app = Flask(__name__)
 
 
 # DB settings
-app.config['SECRET_KEY'] = 'v1g5x7a1u0h8m3p6j3b1z9h7u3k6f4'
+app.config['SECRET_KEY'] = 'd6a7dd5539ce23fc722be0e5190a1526'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///news.db'  # setting location to db
 db = SQLAlchemy(app)  # connection with DB sqlite
 
