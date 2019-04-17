@@ -1,7 +1,9 @@
-from flaskblog.models import New
-from flask import Flask, render_template, url_for, flash, redirect, flash
-from flaskblog import app
-from flaskblog.forms import LoginForm
+from flask import render_template, url_for, flash, redirect
+from flaskblog import app, db, bcrypt
+from flaskblog.forms import LoginForm, RegistrationForm
+from flaskblog.models import User,News
+from flask_login import login_user, current_user
+
 
 posts = [
     {
@@ -19,7 +21,6 @@ posts = [
     },
 ]
 
-# this is test comment
 
 # About - first navbar section
 
@@ -139,15 +140,33 @@ def contacts():
     return render_template('61_contacts.html', posts = posts)
 
 
+@app.route("/register", methods=['GET', 'POST'])
+def register():
+    if current_user.is_authenticated:
+        return redirect(url_for('home'))
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
+        user = User(username=form.username.data, email=form.email.data, password=hashed_password)
+        db.session.add(user)
+        db.session.commit()
+        flash("Your acc created! You can login", 'success')
+        return redirect(url_for('login'))
+    return render_template('00_login.html', title = "Login-admin", form=form, posts = posts)
+
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
+    if current_user.is_authenticated:
+        return redirect(url_for('home'))
     form = LoginForm()
     if form.validate_on_submit():
         # flash(f"Welcome, {form.username.data}!", 'success')
         # return redirect(url_for('home'))
-        if form.email.data == 'admin@blog.com' and form.password.data == 'password':
-            flash(f"Welcome, {form.email.data}!", 'success')
+        user = User.query.filter_by(email=form.email.data)
+        password = User.query.filter_by(password=form.password.data).first()
+        if user and password:
+            login_user(user)
             return redirect(url_for('home'))
         else:
             flash("Login Unsuccessful. Please, go home and die!", 'danger')
