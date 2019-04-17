@@ -16,55 +16,62 @@
               <div class="container login-container">
                           <div class="row">
                               <div class="col-md-6 login-form-1">
-                                  <h3>Login for Form</h3>
-                                  <form method="post">
+                                  <form method="POST", action="">
                                     {{ form.hidden_tag() }}
+                                    <fieldset class="form-group">
+                                      <legend class="border-buttom mb-4">Log In</legend>
                                       <div class="form-group">
-                                          <input type="text" class="form-control" placeholder="Your Email *" value="" />
+                                        {{ form.email.label(class="form-control-label") }}
+                                        {% if form.email.errors %}
+                                        {{ form.email(class="form-control form-control-lg is invalid") }}
+                                        <div class="invalid-feedback">
+                                          {% for error in form.email.errors %}
+                                          <span>{{error}}</span>
+                                          {%endfor%}
+                                        </div>
+                                        {%else%}
+                                          {{ form.email(class="form-control form-control-lg")}}
+                                        {%endif%}
                                       </div>
+
                                       <div class="form-group">
-                                          <input type="password" class="form-control" placeholder="Your Password *" value="" />
+                                        {{ form.password.label(class="form-control-label") }}
+                                        {% if form.password.errors %}
+                                        {{ form.password(class="form-control form-control-lg is invalid") }}
+                                        <div class="invalid-feedback">
+                                          {% for error in form.password.errors %}
+                                          <span>{{error}}</span>
+                                          {%endfor%}
+                                        </div>
+                                        {%else%}
+                                          {{ form.password(class="form-control form-control-lg")}}
+                                        {%endif%}
                                       </div>
-                                      <div class="form-group">
-                                          <input type="submit" class="btnSubmit" value="Login" />
+
+                                      <div class="form-check">
+                                        {{ form.remember(class="form-check-input")}}
+                                        {{ form.remember.label(class="form-check-label")}}
+
                                       </div>
-                                      <div class="form-group">
-                                          <a href="#" class="ForgetPwd">Forget Password?</a>
-                                      </div>
+                                    </fieldset>
+                                    <div class="form-group">
+                                      {{ form.submit(class="btn-outline-info")}}
+                                    </div>
+                                    <small class="text-muted ml-2">
+                                      <a href="#">Forgot password?</a>
+                                    </small>
+
+
+
+
+
                                   </form>
                               </div>
-                              <!-- <div class="col-md-6 login-form-2">
-                                  <h3>Login for Form 2</h3>
-                                  <form>
-                                      <div class="form-group">
-                                          <input type="text" class="form-control" placeholder="Your Email *" value="" />
-                                      </div>
-                                      <div class="form-group">
-                                          <input type="password" class="form-control" placeholder="Your Password *" value="" />
-                                      </div>
-                                      <div class="form-group">
-                                          <input type="submit" class="btnSubmit" value="Login" />
-                                      </div>
-                                      <div class="form-group">
-
-                                          <a href="#" class="ForgetPwd" value="Login">Forget Password?</a>
-                                      </div>
-                                  </form>
-                              </div> -->
-                          </div>
+                              </div>
                       </div>
             </div>
 
 
-  <div class="container">
-    <div class="row">
-
-      <div class="col-sm">
-        <p class="lead"></p>
-
-      </div>
-    </div>
-  </div>
 
   <!-- <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p> -->
   <p class="lead">Мы будем рады каждому Вашему посещению и постараемся быть Вам полезными.</p>

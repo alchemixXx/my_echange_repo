@@ -1,7 +1,7 @@
 from flaskblog.models import New
 from flask import Flask, render_template, url_for, flash, redirect, flash
 from flaskblog import app
-from forms import LoginForm
+from flaskblog.forms import LoginForm
 
 posts = [
     {
@@ -57,54 +57,54 @@ def more_about():
 # Programms - second navbar section
 
 @app.route("/direct_one")
-def progr_one():
+def direct_one():
     return render_template('21_program1.html', posts = posts)
 
 
 @app.route("/direct_two")
-def progr_two():
+def direct_two():
     return render_template('22_program2.html', posts = posts)
 
 
 @app.route("/direct_three")
-def progr_three():
+def direct_three():
     return render_template('23_program3.html', posts = posts)
 
 
 @app.route("/direct_four")
-def progr_frou():
+def direct_four():
     return render_template('24_program4.html', posts = posts)
 
 
 @app.route("/directs_all")
-def progrs_all():
+def directs_all():
     return render_template('25_programs.html', posts = posts)
 
 
 # Treatment - third navbar section
 
 @app.route("/treatment_one")
-def treat_one():
+def treatment_one():
     return render_template('31_treat1.html', posts = posts)
 
 
 @app.route("/treatment_two")
-def treat_two():
+def treatment_two():
     return render_template('32_treat2.html', posts = posts)
 
 
 @app.route("/treatment_three")
-def treat_three():
+def treatment_three():
     return render_template('33_treat3.html', posts = posts)
 
 
 @app.route("/treatment_four")
-def treat_four():
+def treatment_four():
     return render_template('34_treat4.html', posts = posts)
 
 
 @app.route("/treatments_all")
-def treats_all():
+def treatments_all():
     return render_template('35_treats_all.html', posts = posts)
 
 
@@ -121,7 +121,7 @@ def doctors():
 
 
 @app.route("/partners_all")
-def partns_all():
+def partners_all():
     return render_template('45_partners_all.html', posts = posts)
 
 
@@ -140,12 +140,17 @@ def contacts():
 
 
 
-@app.route("/admin")
+@app.route("/login", methods=['GET', 'POST'])
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-        flash(f"Welcome, {form.username.data}!")
-        return redirect(url_for('home'))
-    return render_template('00_login.html', title = "Login-admin", form=form)
+        # flash(f"Welcome, {form.username.data}!", 'success')
+        # return redirect(url_for('home'))
+        if form.email.data == 'admin@blog.com' and form.password.data == 'password':
+            flash(f"Welcome, {form.email.data}!", 'success')
+            return redirect(url_for('home'))
+        else:
+            flash("Login Unsuccessful. Please, go home and die!", 'danger')
+    return render_template('00_login.html', title = "Login-admin", form=form, posts = posts)
     # return render_template('00_admin.html', posts = posts)
 

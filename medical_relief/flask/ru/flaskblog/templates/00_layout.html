@@ -38,7 +38,7 @@
 
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="{{posts.url}}/home"><img src="static/images/logo_en_cut.png" alt="logo_of_Projects"></a>
+  <a class="navbar-brand" href="{{url_for('home') }}"><img src="static/images/logo_en_cut.png" alt="logo_of_Projects"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -52,12 +52,12 @@
           О Фонде
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{{posts.url}}/about_us">Что мы делаем</a>
-          <a class="dropdown-item" href="{{posts.url}}/history">Наша история</a>
-          <a class="dropdown-item" href="{{posts.url}}/team">Наша команда</a>
-          <a class="dropdown-item" href="{{posts.url}}/member_plus">Стать членом нашей команды</a>
+          <a class="dropdown-item" href="{{url_for('about_us') }}">Что мы делаем</a>
+          <a class="dropdown-item" href="{{url_for('history') }}">Наша история</a>
+          <a class="dropdown-item" href="{{url_for('team') }}">Наша команда</a>
+          <a class="dropdown-item" href="{{url_for('member_plus') }}">Стать членом нашей команды</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="{{posts.url}}/more_about">Еще...</a>
+          <a class="dropdown-item" href="{{url_for('more_about') }}">Еще...</a>
         </div>
 
       <li class="nav-item dropdown">
@@ -65,12 +65,12 @@
           Программы
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{{posts.url}}/direct_one">Программа_1</a>
-          <a class="dropdown-item" href="{{posts.url}}/direct_two">Программа_2</a>
-          <a class="dropdown-item" href="{{posts.url}}/direct_three">Программа_3</a>
-          <a class="dropdown-item" href="{{posts.url}}/direct_four">Программа_4</a>
+          <a class="dropdown-item" href="{{url_for('direct_one') }}">Программа_1</a>
+          <a class="dropdown-item" href="{{url_for('direct_two') }}">Программа_2</a>
+          <a class="dropdown-item" href="{{url_for('direct_three') }}">Программа_3</a>
+          <a class="dropdown-item" href="{{url_for('direct_four') }}">Программа_4</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="{{posts.url}}/directs_all">Посмотреть все программы</a>
+          <a class="dropdown-item" href="{{url_for('directs_all') }}">Посмотреть все программы</a>
         </div>
       </li>
 
@@ -79,12 +79,12 @@
           Лечение
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{{posts.url}}/treatment_one">Клиника_1</a>
-          <a class="dropdown-item" href="{{posts.url}}/treatment_two">Клиника_2</a>
-          <a class="dropdown-item" href="{{posts.url}}/treatment_three">Клиника_3</a>
-          <a class="dropdown-item" href="{{posts.url}}/treatment_four">Клиника_4</a>
+          <a class="dropdown-item" href="{{url_for('treatment_one') }}">Клиника_1</a>
+          <a class="dropdown-item" href="{{url_for('treatment_two') }}">Клиника_2</a>
+          <a class="dropdown-item" href="{{url_for('treatment_three') }}">Клиника_3</a>
+          <a class="dropdown-item" href="{{url_for('treatment_four') }}">Клиника_4</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="{{posts.url}}/treatments_all">Еще...</a>
+          <a class="dropdown-item" href="{{url_for('treatments_all') }}">Еще...</a>
         </div>
       </li>
 
@@ -93,19 +93,19 @@
           Партнеры
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{{posts.url}}/hospitals">Больницы</a>
-          <a class="dropdown-item" href="{{posts.url}}/doctors">Доктора</a>
-          <a class="dropdown-item" href="{{posts.url}}/member_plus">Стать партнером</a>
+          <a class="dropdown-item" href="{{url_for('hospitals') }}">Больницы</a>
+          <a class="dropdown-item" href="{{url_for('doctors') }}">Доктора</a>
+          <a class="dropdown-item" href="{{url_for('member_plus') }}">Стать партнером</a>
         <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="{{posts.url}}/partners_all">Еще...</a>
+          <a class="dropdown-item" href="{{url_for('partners_all') }}">Еще...</a>
         </div>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="{{posts.url}}/news">Новости</a>
+        <a class="nav-link" href="{{url_for('news') }}">Новости</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{posts.url}}/contacts">Контакты</a>
+        <a class="nav-link" href="{{url_for('contacts') }}">Контакты</a>
       </li>
       <!-- <li class="nav-item">
         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
@@ -123,7 +123,7 @@
           <a class="nav-link" href="#">ua</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">en</a>
+          <a class="nav-link" href="{{url_for('login') }}">en</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">ru</a>
@@ -142,11 +142,18 @@
 
 
 
-<main>
+<main role="main">
   {% with messages = get_flashed_messages (with_categories=true) %}
-  {% if messages %}
-  {% endif %}
-  {% block content %}  {% endblock %}
+      {% if messages %}
+          {% for category, message in messages %}
+          <div class="alert alert-{{category}}">
+            {{ message }}
+          </div>
+          {%endfor%}
+      {% endif %}
+  {%endwith%}
+  {% block content %}
+  {% endblock %}
 </main>
 
 
@@ -185,32 +192,32 @@
               <ul class="list-unstyled">
                 <li>
                   <p>
-                    <a href="{{posts.url}}/more_about">О Фонде</a>
+                    <a href="{{url_for('more_about') }}">О Фонде</a>
                   </p>
                 </li>
                 <li>
                   <p>
-                    <a href="{{posts.url}}/directs_all">Программы</a>
+                    <a href="{{url_for('directs_all') }}">Программы</a>
                   </p>
                 </li>
                 <li>
                   <p>
-                    <a href="{{posts.url}}/treatments_all">Лечение</a>
+                    <a href="{{url_for('treatments_all') }}">Лечение</a>
                   </p>
                 </li>
                 <li>
                   <p>
-                    <a href="{{posts.url}}/partners_all">Партнеры</a>
+                    <a href="{{url_for('partners_all') }}">Партнеры</a>
                   </p>
                 </li>
                 <li>
                   <p>
-                    <a href="{{posts.url}}/news">Новости</a>
+                    <a href="{{url_for('news') }}">Новости</a>
                   </p>
                 </li>
                 <li>
                   <p>
-                    <a href="{{posts.url}}/contacts">Контакты</a>
+                    <a href="{{url_for('contacts') }}">Контакты</a>
                   </p>
                 </li>
               </ul>
