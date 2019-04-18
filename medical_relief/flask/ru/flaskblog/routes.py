@@ -2,7 +2,7 @@ from flask import render_template, url_for, flash, redirect
 from flaskblog import app, db, bcrypt
 from flaskblog.forms import LoginForm, RegistrationForm
 from flaskblog.models import User,News
-from flask_login import login_user, current_user
+from flask_login import login_user, current_user, logout_user
 
 
 posts = [
@@ -152,7 +152,7 @@ def register():
         db.session.commit()
         flash("Your acc created! You can login", 'success')
         return redirect(url_for('login'))
-    return render_template('00_login.html', title = "Login-admin", form=form, posts = posts)
+    return render_template('00_register.html', title = "Login-admin", form=form, posts= posts)
 
 
 @app.route("/login", methods=['GET', 'POST'])
@@ -163,13 +163,18 @@ def login():
     if form.validate_on_submit():
         # flash(f"Welcome, {form.username.data}!", 'success')
         # return redirect(url_for('home'))
-        user = User.query.filter_by(email=form.email.data)
-        password = User.query.filter_by(password=form.password.data).first()
-        if user and password:
-            login_user(user)
+        user = User.query.filter_by(email=form.email.data).first()
+        # password = User.query.filter_by(password=form.password.data).first()
+        if user and bcrypt.check_password_hash(user.password, form.password.data):
+            login_user(user, remember=form.remember.data)
             return redirect(url_for('home'))
         else:
             flash("Login Unsuccessful. Please, go home and die!", 'danger')
-    return render_template('00_login.html', title = "Login-admin", form=form, posts = posts)
+    return render_template('00_login.html', title = "Login-admin", form=form, posts=posts)
     # return render_template('00_admin.html', posts = posts)
 
+
+@app.route("/logout")
+def logout():
+    logout_user()
+    return redirect(url_for('home'))
