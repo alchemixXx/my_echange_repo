@@ -99,7 +99,7 @@ def task_3_find_item_via_value(data, value):
 #     self.assertEqual(task_5_min_value_strings(given_data), 'a')
 
 def task_5_min_value_strings(data) -> str:
-    created_dict = {item:len(str(item)) for item in data}
+    # created_dict = {item:len(str(item)) for item in data}
     # return list(created_dict.keys())[list(created_dict.values()).index(min(created_dict.values()))]
     # return min([len(str(x)) for x in data])
     # return list(created_dict.values()).index(min(created_dict.values()))
@@ -107,12 +107,21 @@ def task_5_min_value_strings(data) -> str:
     #       ['So', 'the', 'normal',]        #[2, 3, 6, 3, 3]                         index of searched element
     # [list(created_dict.values()).index(min(created_dict.values()))]  ==> [15]
     # {k:v for k,v in data if min({item:len(str(item)) for item in data}.values()) == v}
-    print(created_dict)
-    return [str(key) for (key,value) in {item:len(str(item)) for item in data}.items() if value == min([len(str(x)) for x in data])][0]
+    # print(created_dict)
+    # return [str(key) for (key,value) in {item:len(str(item)) for item in data}.items() if value == min([len(str(x)) for x in data])][0]
 
 
     # return [x for x in data if len(str(x)) == min(map(lambda x: len(str(x)), data))]
     # return data.index(min(map(lambda x: str(x), data)))
+
+
+    for item in data:
+        if str(item) == str(data[0]):
+            min_len = str(item)
+        else:
+            if len(str(item)) < len(min_len):
+                min_len = str(item)
+    return min_len
 
 
 
@@ -275,7 +284,7 @@ def task_11_create_list_of_random_characters():
 
 # print(task_6_min_value_list_of_dicts(data, key6))
 # print(task_3_find_item_via_value(data, value3))
-# print(task_5_min_value_strings(data6))
+print(task_5_min_value_strings(data6))
 # print(task_7_max_value_list_of_lists(data7))
 # print(task_8_sum_of_ints(data8))
 # print(task_9_sum_characters_positions(data9))
@@ -283,12 +292,12 @@ def task_11_create_list_of_random_characters():
 # test10 = task_10_generator_of_simple_numbers()
 #
 # print(next(test10))
-print(task_10_generator_of_simple_numbers())
-x = task_10_generator_of_simple_numbers()
-print(next(x))
-print(next(x))
-print(next(x))
-print(next(x))
+# print(task_10_generator_of_simple_numbers())
+# x = task_10_generator_of_simple_numbers()
+
 
 # print(task_11_create_list_of_random_characters())
 
+
+
+print(None < '17')
