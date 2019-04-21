@@ -51,7 +51,24 @@
 <hr class="my-4">
 <h2>Последние новости</h2>
 <div class="news_zone">
-<div class="left">
+
+  {% for post in posts %}
+  <!-- <img class="rounded-circle article-img" src="{{ url_for('static', filename='post_pics'+'post.author.image_file') }}" alt="__sorry__"> -->
+  <img class="rounded-circle article-img" src="{{ url_for('static', filename='post_pics/'+'default.jpg') }}" alt="__sorry__">
+   <article class="media content-section">
+     <div class="media-body">
+       <div class="article-metadata">
+         <small class="text-muted">{{post.pub_date.strftime('%Y-%m-%d')}}</small>
+       </div>
+       <h2><a class="article-title" href="#">{{post.title}}</a></h2>
+       <p class="article-content">{{post.content}}</p>
+
+     </div>
+
+   </article>
+  {% endfor %}
+
+<!-- <div class="left">
   <ul class="list-unstyled">
     <li class="media">
       <img src="./static/images/2.png" class="mr-3" alt="...">
@@ -72,6 +89,7 @@
 <div class="right">
   <ul class="list-unstyled">
     <li class="media">
+
       <img src="./static/images/2.png" class="mr-3" alt="...">
       <div class="media-body">
         <a href="#"><h4 class="mt-0 mb-1">List-based media object</h4></a>
@@ -86,7 +104,7 @@
       </div>
     </li>
     </ul>
-</div>
+</div> -->
   <p class="lead">Больше новостей Вы найдете в разделе <a href="#">Новости</a>.</p>
 </div>
 
@@ -101,10 +119,4 @@
 
 </main>
 
-
-    <!-- {% for post in posts %}
-        <h1>{{ post.title }} </h1>
-        <p>By {{ post.author }} on {{post.date }}</p>
-        <p>{{ post.content }}</p>
-    {% endfor %}
-{% endblock content%} -->
+{% endblock content%}

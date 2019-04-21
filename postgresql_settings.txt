@@ -1,0 +1,6 @@
+lc_monetary = 'uk_UA.UTF-8' 
+
+was changed to
+
+en_US.UTF-8
+
