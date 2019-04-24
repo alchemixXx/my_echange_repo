@@ -2,27 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8f070abd-b1c1-4aad-8f92-5022143d04e1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../Cursor/01_month_march/03_week/.idea/03_week.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Cursor/01_month_march/03_week/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Cursor/01_month_march/03_week/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Cursor/01_month_march/03_week/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Cursor/01_month_march/03_week/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/flask.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Cursor/01_month_march/03_week/db_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Cursor/01_month_march/03_week/db_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Cursor/01_month_march/03_week/homework.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Cursor/01_month_march/03_week/homework.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Cursor/01_month_march/03_week/init_database.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Cursor/01_month_march/03_week/init_database.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Cursor/01_month_march/03_week/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Cursor/01_month_march/03_week/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/flaskblog/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/flask.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/flask.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ru/flaskblog/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/routes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ru/flaskblog/site.db" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/site.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/flaskblog/templates/00_account.html" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/templates/00_account.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/flaskblog/templates/00_layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/templates/00_layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ru/flaskblog/templates/00_create_post.html" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/templates/00_create_post.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ru/flaskblog/templates/01_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/templates/01_home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ru/requirements.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,11 +21,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ru/flaskblog/routes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="482">
-              <caret line="248" column="77" lean-forward="true" selection-start-line="248" selection-start-column="77" selection-end-line="248" selection-end-column="77" />
-              <folding>
-                <element signature="e#0#68#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="35">
+              <caret line="265" column="36" lean-forward="true" selection-start-line="265" selection-start-column="36" selection-end-line="265" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -47,7 +30,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ru/flaskblog/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1144">
+            <state relative-caret-position="799">
               <caret line="52" column="14" selection-start-line="52" selection-start-column="10" selection-end-line="52" selection-end-column="14" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
@@ -59,8 +42,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ru/flaskblog/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="14" column="12" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="12" />
+            <state relative-caret-position="204">
+              <caret line="14" column="12" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="12" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -83,9 +66,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="65" />
-    <option name="y" value="24" />
-    <option name="width" value="1855" />
+    <option name="x" value="-1928" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -136,6 +119,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -161,16 +145,21 @@
       <updated>1555844986152</updated>
       <workItem from="1555844987656" duration="7063000" />
       <workItem from="1555865159211" duration="5536000" />
+      <workItem from="1556082337881" duration="3798000" />
+      <workItem from="1556104740422" duration="646000" />
+      <workItem from="1556105422318" duration="51000" />
+      <workItem from="1556105610680" duration="373000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12599000" />
+    <option name="totallyTimeSpent" value="17467000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-4" width="1857" height="1085" extended-state="6" />
+    <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25262576" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26332623" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -184,7 +173,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32110092" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3206934" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -204,19 +193,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ru/flaskblog/models.py">
+    <entry file="file://$PROJECT_DIR$/ru/flaskblog/routes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="14" column="12" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="35">
+          <caret line="265" column="36" lean-forward="true" selection-start-line="265" selection-start-column="36" selection-end-line="265" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ru/flaskblog/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1144">
+        <state relative-caret-position="799">
           <caret line="52" column="14" selection-start-line="52" selection-start-column="10" selection-end-line="52" selection-end-column="14" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
@@ -224,12 +210,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ru/flaskblog/routes.py">
+    <entry file="file://$PROJECT_DIR$/ru/flaskblog/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="248" column="77" lean-forward="true" selection-start-line="248" selection-start-column="77" selection-end-line="248" selection-end-column="77" />
+        <state relative-caret-position="204">
+          <caret line="14" column="12" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="12" />
           <folding>
-            <element signature="e#0#68#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>

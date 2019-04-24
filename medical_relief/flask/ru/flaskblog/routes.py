@@ -1,4 +1,4 @@
-from flask import render_template, url_for, flash, redirect, request
+from flask import render_template, url_for, flash, redirect, request, abort
 from flaskblog import app, db, bcrypt
 from flaskblog.forms import LoginForm, RegistrationForm, UpdateAccountForm, PostForm
 from flaskblog.models import User,News
@@ -35,54 +35,54 @@ def home():
 
 @app.route("/about_us")
 def about_us():
-    return render_template('11_about_us.html', posts = posts)
+    return render_template('11_about_us.html')
 
 
 @app.route("/history")
 def history():
-    return render_template('12_history.html', posts = posts)
+    return render_template('12_history.html')
 
 
 @app.route("/team")
 def team():
-    return render_template('13_team.html', posts = posts)
+    return render_template('13_team.html')
 
 
 @app.route("/member_plus")
 def member_plus():
-    return render_template('14_member_plus.html', posts = posts)
+    return render_template('14_member_plus.html')
 
 
 @app.route("/more_about")
 def more_about():
-    return render_template('15_more_about.html', posts = posts)
+    return render_template('15_more_about.html')
 
 
 # Programms - second navbar section
 
 @app.route("/direct_one")
 def direct_one():
-    return render_template('21_program1.html', posts = posts)
+    return render_template('21_program1.html')
 
 
 @app.route("/direct_two")
 def direct_two():
-    return render_template('22_program2.html', posts = posts)
+    return render_template('22_program2.html')
 
 
 @app.route("/direct_three")
 def direct_three():
-    return render_template('23_program3.html', posts = posts)
+    return render_template('23_program3.html')
 
 
 @app.route("/direct_four")
 def direct_four():
-    return render_template('24_program4.html', posts = posts)
+    return render_template('24_program4.html')
 
 
 @app.route("/directs_all")
 def directs_all():
-    return render_template('25_programs.html', posts = posts)
+    return render_template('25_programs.html')
 
 
 # Treatment - third navbar section
@@ -241,9 +241,52 @@ def new_post():
         # image_file = url_for('static', filename='post_pics/'+picture_file)
         image_file = url_for('static', filename='post_pics/defaul.png')
 
-        post = News(title=form.title.data, content=form.content.data, image_file=image_file)
+        post = News(title=form.title.data, content=form.content.data, image_file=image_file, )
         db.session.add(post)
         db.session.commit()
         flash('Post created', 'success')
         return redirect(url_for('home'))
     return render_template('00_create_post.html', title="New Post", form=form)
+
+
+@app.route("/posts/<int:post_id>")
+def post(post_id):
+    post = News.query.get_or_404(post_id)
+    return render_template('post.html', title=post.title, post=post )
+
+@app.route("/posts/<int:post_id>/update", methods=['GET', 'POST'])
+@login_required
+def update_post(post_id):
+    post = News.query.get_or_404(post_id)
+    # if post.author != current_user
+    # if current_user:
+    #     abort(403)
+    form = PostForm()
+    if form.validate_on_submit():
+        post.title = form.title.data
+        post.content = form.content.data
+        db.session.commit()
+        flash('Post has beend updated', 'success')
+        return redirect(url_for('post', post_id=post.id))
+    elif request.method == "GET":
+        form.title.data = post.title
+        form.content.data = post.content
+    # return render_template('00_create_post.html', title="Update Post",
+    #                        form=form, legend="Update Post")
+    return render_template('00_create_post.html', title="Update Post",
+                           form=form)
+
+
+
+@app.route("/posts/<int:post_id>/delete", methods=['POST'])
+@login_required
+def delete_post(post_id):
+    post = News.query.get_or_404(post_id)
+
+    # if post.author != current_user
+    # if current_user:
+    #     abort(403)
+    db.session.delete(post)
+    db.session.commit()
+    flash('Post has been deleted!', 'success')
+    return redirect(url_for('home'))
