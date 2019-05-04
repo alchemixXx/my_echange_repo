@@ -1,0 +1,9 @@
+git remote add upstream git@github.com:cursor-education/python-course-alphabet.git
+
+git fetch -ap upstream
+
+git checkout -t upstream/saturday
+
+git pull upstream saturday
+
+
