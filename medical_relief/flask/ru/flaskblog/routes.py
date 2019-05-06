@@ -1,27 +1,11 @@
 from flask import render_template, url_for, flash, redirect, request, abort
 from flaskblog import app, db, bcrypt
-from flaskblog.forms import LoginForm, RegistrationForm, UpdateAccountForm, PostForm
+from flaskblog.forms import LoginForm, RegistrationForm, UpdateAccountForm, PostForm, UpdatePostForm
 from flaskblog.models import User,News
 from flask_login import login_user, current_user, logout_user, login_required
 import secrets
 import os
 from PIL import Image
-
-# posts = [
-#     {
-#         'url':'http://127.0.0.1:5000',
-#         # 'author': "Corney Schafter",
-#         # 'title': "Blog post 1",
-#         # 'content': 'First blog post',
-#         # 'date': 'April 20, 2018',
-#     },
-#     {
-#         # 'author': "Pavel D",
-#         # 'title': "Blog post 2",
-#         # 'content': 'Second blog post',
-#         # 'date': 'April 21, 2018',
-#     },
-# ]
 
 
 # About - first navbar section
@@ -29,8 +13,11 @@ from PIL import Image
 @app.route("/")
 @app.route("/home")
 def home():
-    posts = News.query.all()
-    return render_template('01_home.html', posts = posts)
+    # posts = News.query.order_by(News.id.desc()).limit(4).all()
+    page = request.args.get('page', 1, type=int)
+    posts = News.query.paginate(page=page, per_page=4)
+    # image_file = url_for('static', filename='post_pics/default.jpg')
+    return render_template('01_home.html', posts=posts)
 
 
 @app.route("/about_us")
@@ -89,58 +76,60 @@ def directs_all():
 
 @app.route("/treatment_one")
 def treatment_one():
-    return render_template('31_treat1.html', posts = posts)
+    return render_template('31_treat1.html')
 
 
 @app.route("/treatment_two")
 def treatment_two():
-    return render_template('32_treat2.html', posts = posts)
+    return render_template('32_treat2.html')
 
 
 @app.route("/treatment_three")
 def treatment_three():
-    return render_template('33_treat3.html', posts = posts)
+    return render_template('33_treat3.html')
 
 
 @app.route("/treatment_four")
 def treatment_four():
-    return render_template('34_treat4.html', posts = posts)
+    return render_template('34_treat4.html')
 
 
 @app.route("/treatments_all")
 def treatments_all():
-    return render_template('35_treats_all.html', posts = posts)
+    return render_template('35_treats_all.html')
 
 
 # Partners - fourth navbar section
 
 @app.route("/hospitals")
 def hospitals():
-    return render_template('41_partner1.html', posts = posts)
+    return render_template('41_partner1.html')
 
 
 @app.route("/doctors")
 def doctors():
-    return render_template('42_partner2.html', posts = posts)
+    return render_template('42_partner2.html')
 
 
 @app.route("/partners_all")
 def partners_all():
-    return render_template('45_partners_all.html', posts = posts)
+    return render_template('45_partners_all.html')
 
 
 # News - fifth navbar section
 
 @app.route("/news")
 def news():
-    return render_template('51_news.html', posts = posts)
+    page = request.args.get('page', 1, type=int)
+    posts = News.query.paginate(page=page, per_page=7)
+    return render_template('51_news.html', posts=posts)
 
 
 # Contacts - sixth navbar section
 
 @app.route("/contacts")
 def contacts():
-    return render_template('61_contacts.html', posts = posts)
+    return render_template('61_contacts.html')
 
 
 @app.route("/register", methods=['GET', 'POST'])
@@ -155,7 +144,7 @@ def register():
         db.session.commit()
         flash("Your acc created! You can login", 'success')
         return redirect(url_for('login'))
-    return render_template('00_register.html', title = "Login-admin", form=form, posts= posts)
+    return render_template('00_register.html', title = "Login-admin", form=form)
 
 
 @app.route("/login", methods=['GET', 'POST'])
@@ -174,7 +163,7 @@ def login():
             return redirect(next_page) if next_page else redirect(url_for('home'))
         else:
             flash("Login Unsuccessful. Please, go home and die!", 'danger')
-    return render_template('00_login.html', title = "Login-admin", form=form, posts=posts)
+    return render_template('00_login.html', title = "Login-admin", form=form)
     # return render_template('00_admin.html', posts = posts)
 
 
@@ -236,10 +225,17 @@ def save_post_picture(form_picture):
 def new_post():
     form = PostForm()
     if form.validate_on_submit():
-        if form.picture.data:
-            picture_file = save_post_picture(form.picture.data)
-        # image_file = url_for('static', filename='post_pics/'+picture_file)
-        image_file = url_for('static', filename='post_pics/defaul.png')
+        # if form.picture.data:
+        # picture_file = save_post_picture(form.picture.data)
+        # image_file = picture_file
+        # else:
+        #     # image_file = url_for('static', filename='post_pics/'+picture_file)
+        # if form.picture.data != False:
+        #     picture_file = save_post_picture(form.picture.data)
+        #     picture = picture_file
+        # picture = 'default.jpg'
+        picture = form.file_name.data
+        image_file = url_for('static', filename='post_pics/' + picture)
 
         post = News(title=form.title.data, content=form.content.data, image_file=image_file, )
         db.session.add(post)
@@ -252,7 +248,30 @@ def new_post():
 @app.route("/posts/<int:post_id>")
 def post(post_id):
     post = News.query.get_or_404(post_id)
-    return render_template('post.html', title=post.title, post=post )
+    return render_template('post.html', title=post.title, post=post,  image_file=post.image_file)
+
+# @app.route("/posts/<int:post_id>/update", methods=['GET', 'POST'])
+# @login_required
+# def update_post(post_id):
+#     post = News.query.get_or_404(post_id)
+#     # if post.author != current_user
+#     # if current_user:
+#     #     abort(403)
+#     form = PostForm()
+#     if form.validate_on_submit():
+#         post.title = form.title.data
+#         post.content = form.content.data
+#         db.session.commit()
+#         flash('Post has beend updated', 'success')
+#         return redirect(url_for('post', post_id=post.id))
+#     elif request.method == "GET":
+#         form.title.data = post.title
+#         form.content.data = post.content
+#     # return render_template('00_create_post.html', title="Update Post",
+#     #                        form=form, legend="Update Post")
+#     return render_template('00_create_post.html', title="Update Post",
+#                            form=form)
+
 
 @app.route("/posts/<int:post_id>/update", methods=['GET', 'POST'])
 @login_required
@@ -265,16 +284,22 @@ def update_post(post_id):
     if form.validate_on_submit():
         post.title = form.title.data
         post.content = form.content.data
+
+        picture = form.file_name.data
+        image_file = url_for('static', filename='post_pics/' + picture)
+
         db.session.commit()
         flash('Post has beend updated', 'success')
         return redirect(url_for('post', post_id=post.id))
     elif request.method == "GET":
         form.title.data = post.title
         form.content.data = post.content
+        form.picture.data = post.image_file
     # return render_template('00_create_post.html', title="Update Post",
     #                        form=form, legend="Update Post")
     return render_template('00_create_post.html', title="Update Post",
                            form=form)
+
 
 
 

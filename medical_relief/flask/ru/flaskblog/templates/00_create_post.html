@@ -42,6 +42,20 @@
                       </div>
 
                       <div class="form-group">
+                          {{ form.file_name.label(class="form-control-label") }}
+                          {% if form.file_name.errors %}
+                              {{ form.file_name(class="form-control form-control-lg is-invalid") }}
+                              <div class="invalid-feedback">
+                                  {% for error in form.file_name.errors %}
+                                      <span>{{ error }}</span>
+                                  {% endfor %}
+                              </div>
+                          {% else %}
+                              {{ form.file_name(class="form-control form-control-lg") }}
+                          {% endif %}
+                      </div>
+
+                      <div class="form-group">
                           {{ form.picture.label()}}
                           {{ form.picture(class="form-control-file")}}
                           {%if form.picture.errors %}
