@@ -1,6 +1,8 @@
 from flask import render_template, url_for, flash, redirect, request, abort
 from flaskblog import app, db, bcrypt
-from flaskblog.forms import LoginForm, RegistrationForm, UpdateAccountForm, PostForm, UpdatePostForm
+from flaskblog.forms import (LoginForm, RegistrationForm, UpdateAccountForm,
+                             PostForm, UpdatePostForm,
+                             RequestResetForm, ResetPasswordForm)
 from flaskblog.models import User,News
 from flask_login import login_user, current_user, logout_user, login_required
 import secrets
@@ -15,7 +17,7 @@ from PIL import Image
 def home():
     # posts = News.query.order_by(News.id.desc()).limit(4).all()
     page = request.args.get('page', 1, type=int)
-    posts = News.query.paginate(page=page, per_page=4)
+    posts = News.query.order_by(News.pub_date.desc()).paginate(page=page, per_page=4)
     # image_file = url_for('static', filename='post_pics/default.jpg')
     return render_template('01_home.html', posts=posts)
 
@@ -121,7 +123,7 @@ def partners_all():
 @app.route("/news")
 def news():
     page = request.args.get('page', 1, type=int)
-    posts = News.query.paginate(page=page, per_page=7)
+    posts = News.query.order_by(News.pub_date.desc()).paginate(page=page, per_page=7)
     return render_template('51_news.html', posts=posts)
 
 
@@ -301,8 +303,6 @@ def update_post(post_id):
                            form=form)
 
 
-
-
 @app.route("/posts/<int:post_id>/delete", methods=['POST'])
 @login_required
 def delete_post(post_id):
@@ -315,3 +315,39 @@ def delete_post(post_id):
     db.session.commit()
     flash('Post has been deleted!', 'success')
     return redirect(url_for('home'))
+
+
+@app.route("/user/<string:username>")
+def user_post(username):
+    user = User.query.filter_by(username=username).first_or_404()
+    page = request.args.get('page', 1, type=int)
+    posts = News.query.filter_by(author=user).order_by(News.pub_date.desc()).paginate(page=page, per_page=4)
+    return render_template('user_posts.html', posts=posts, user=user)
+
+def send_reset_email(user):
+    pass
+
+@app.route("/reset_password", methods=['GET', 'POST'])
+def reset_request():
+    if current_user.is_authenticated:
+        return redirect(url_for('home'))
+    form = RequestResetForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(email=form.email.data).first()
+        send_reset_email(user)
+        flash('An email has been sent with instraction', 'info')
+        return redirect(url_for('login'))
+    return render_template('reset_request.html', title='Reset Password',form=form)
+
+@app.route("/reset_password/<token>", methods=['GET', 'POST'])
+def reset_token(token):
+    if current_user.is_authenticated:
+        return redirect(url_for('home'))
+    user = User.verify_reset_token(token)
+    if user is None:
+        flash("That is an invalid token", 'warning')
+        return redirect(url_for('reset_request'))
+    form = RequestResetForm()
+    return render_template('reset_token.html', title='Reset Password',form=form)
+
+
