@@ -3,31 +3,37 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 from flask_mail import Mail
-import os
-
-
-# from flask_admin import Admin
-# from flask_admim.contrib.sqla import ModelView
-
-app = Flask(__name__)
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///D:\01_personal_documents\02_coding\medical_relief\flask\ru\news.db'
-
+from flaskblog.config import Config
 
 # DB settings
-app.config['SECRET_KEY'] = 'd6a7dd5539ce23fc722be0e5190a1526'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'  # setting location to db
-db = SQLAlchemy(app)  # connection with DB sqlite
+db = SQLAlchemy()  # connection with DB sqlite
 
-bcrypt = Bcrypt(app)  # for hashing the passwords
-login_manager = LoginManager(app)
-login_manager.login_view = 'login'
+bcrypt = Bcrypt()  # for hashing the passwords
+login_manager = LoginManager()
+login_manager.login_view = 'users.login'
 login_manager.login_message_category = 'info'
-app.config['MAIL_SERVER']='smpt.yahoo.com'
-app.config['MAIL_PORT'] = 587
-app.config['MAIL_USE_TLS'] = 'True'
-app.config['MAIL_USERNAME'] = os.environ.get("EMAIL_USER")
-app.config['MAIL_PASSWORD'] = os.environ.get("EMAIL_PASS")
-mail = Mail(app)
+mail = Mail()
 
 
-from flaskblog import routes
+#from flaskblog import routes
+
+
+
+def create_app(config_class = Config):
+    app = Flask(__name__)
+    app.config.from_object(Config)
+    db.init_app(app)
+    bcrypt.init_app(app)
+    login_manager.init_app(app)
+    mail.init_app(app)
+
+    from flaskblog.users.routes import users
+    from flaskblog.news.routes import posts
+    from flaskblog.main.routes import main
+
+    app.register_blueprint(users)
+    app.register_blueprint(posts)
+    app.register_blueprint(main)
+
+    return app
+

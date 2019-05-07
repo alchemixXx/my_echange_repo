@@ -22,7 +22,7 @@
          <small class="text-muted">{{post.pub_date.strftime('%Y-%m-%d')}}</small>
          {%if current_user%}
          <div class="">
-           <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{url_for('update_post', post_id=post.id)}}">Update</a>
+           <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{url_for('posts.update_post', post_id=post.id)}}">Update</a>
            <button class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal" type="button" name="button">Delete</button>
 
 
@@ -50,7 +50,7 @@
 
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <form class="" action="{{url_for('delete_post', post_id=post.id)}}" method="post">
+            <form class="" action="{{url_for('posts.delete_post', post_id=post.id)}}" method="post">
                 <input type="submit" class="btn btn-danger" name="" value="Delete">
             </form>
           </div>
