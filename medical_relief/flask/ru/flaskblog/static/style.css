@@ -222,3 +222,18 @@ background-size: cover;
 .for_post{
   text-align: center;
 }
+
+
+.content-section_err {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+/* .content-section_err>h1, p{
+  text-align: center;
+  margin-left:auto;
+
+} */
