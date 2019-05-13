@@ -53,12 +53,14 @@
 <div class="news_zone">
 
 
-
   {% for post in posts.items %}
 
   <!-- <img class="rounded-circle article-img" src="{{ url_for('static', filename='post_pics'+'post.author.image_file') }}" alt="__sorry__"> -->
   <!-- <img class="rounded-circle article-img" src="{{ url_for('static', filename='post_pics/'+'default.jpg') }}" alt="__sorry__"> -->
-  <img class="img-thumbnail" src="{{ post.image_file }}" alt='__sorry__'>
+
+
+
+  <img class="img-thumbnail pict" src="{{ post.image_file }}" alt='__sorry__'>
    <article class="media content-section">
      <div class="media-body">
        <div class="article-metadata">
@@ -66,9 +68,9 @@
        </div>
        <h2><a class="article-title" href="{{url_for('posts.post', post_id=post.id)}}">{{post.title}}</a></h2>
        <p class="article-content">{{post.content}}</p>
+       <hr class="my-4">
 
      </div>
-
    </article>
 
   {% endfor %}
@@ -111,7 +113,7 @@
     </li>
     </ul>
 </div> -->
-  <p class="lead">Больше новостей Вы найдете в разделе <a href="#">Новости</a>.</p>
+  <p class="lead">Больше новостей Вы найдете в разделе <a href="{{url_for('main.news') }}">Новости</a>.</p>
 </div>
 
           <!-- <hr class="my-4">
@@ -121,7 +123,6 @@
 
         </div>
     </div>
-
 
 </main>
 
