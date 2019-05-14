@@ -127,3 +127,7 @@ def news():
 @main.route("/contacts")
 def contacts():
     return render_template('61_contacts.html')
+
+@main.route("/support_pr")
+def help_us():
+    return render_template('71_help_us.html')
