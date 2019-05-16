@@ -43,3 +43,14 @@ class User(db.Model, UserMixin):
 
     def __repr__(self):
         return f'User("{self.username}", "{self.email}", "{self.image_file}")'
+
+
+class Treatment(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(128), unique=True, nullable=False)
+    direction = db.Column(db.String(256), nullable=False)
+    content = db.Column(db.Text, nullable=False)
+    image_file = db.Column(db.String(20), nullable=False, default='default.jpg')
+
+    def __repr__(self):
+        return f"New('{self.title}', '{self.direction}')"

@@ -372,3 +372,7 @@ padding-right: 1.1rem;
   text-shadow: 0px 19px 38px rgba(0,0,0,0.30), 0px 5px 12px rgba(0,0,0,0.22);
   text-decoration: none;
 }
+
+.centred{
+  text-align:center;
+}

@@ -74,15 +74,26 @@
         </div>
       </li>
 
+
+      <!-- <li class="nav-item">
+          <a class="nav-link" href="{{url_for('main.treatments_all') }}">Лечение</a>
+      </li> -->
+
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCuring" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Лечение
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{{url_for('main.treatment_one') }}">Клиника_1</a>
-          <a class="dropdown-item" href="{{url_for('main.treatment_two') }}">Клиника_2</a>
-          <a class="dropdown-item" href="{{url_for('main.treatment_three') }}">Клиника_3</a>
-          <a class="dropdown-item" href="{{url_for('main.treatment_four') }}">Клиника_4</a>
+          <a class="dropdown-item" href="{{url_for('main.treatment_one') }}">Дыхательная система</a>
+          <a class="dropdown-item" href="{{url_for('main.treatment_two') }}">Пищеварительная система</a>
+          <a class="dropdown-item" href="{{url_for('main.treatment_three') }}">Мочевыделительная система</a>
+          <a class="dropdown-item" href="{{url_for('main.treatment_four') }}">Опорно-двигательный аппарат</a>
+          <a class="dropdown-item" href="{{url_for('main.treatment_five') }}">Циркуляторная система</a>
+          <a class="dropdown-item" href="{{url_for('main.treatment_six') }}">Нервная система</a>
+          <a class="dropdown-item" href="{{url_for('main.treatment_seven') }}">Сенсорная система</a>
+          <a class="dropdown-item" href="{{url_for('main.treatment_eight') }}">Покровная система</a>
+          <a class="dropdown-item" href="{{url_for('main.treatment_nine') }}">Эндокринная система</a>
+          <a class="dropdown-item" href="{{url_for('main.treatment_ten') }}">Органы кроветворения и иммунной системы</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="{{url_for('main.treatments_all') }}">Еще...</a>
         </div>
@@ -109,7 +120,7 @@
       </li>
 
       <li class="nav-item">
-          <a class="nav-link" href="{{url_for('main.help_us') }}">Поддрежать проект</a>
+          <a class="nav-link" href="{{url_for('main.help_us') }}">Поддержать проект</a>
       </li>
           {% if current_user.is_authenticated %}
           <li class="nav-item dropdown">
@@ -119,9 +130,10 @@
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="nav-link" href="{{url_for('users.account') }}">account</a>
               <a class="nav-link" href="{{url_for('users.logout') }}">logout</a>
-                <a class="nav-link" href="{{url_for('posts.new_post') }}">New Post</a>
+              <a class="nav-link" href="{{url_for('posts.new_post') }}">New Post</a>
+              <a class="nav-link" href="{{url_for('treatment.new_treatment') }}">New Treatment</a>
             <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="{{url_for('main.partners_all') }}">Еще...</a>
+              <a class="dropdown-item" href="{{url_for('main.home') }}">Еще...</a>
             </div>
           </li>
           {%endif%}
