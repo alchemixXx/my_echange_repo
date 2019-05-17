@@ -104,7 +104,7 @@
           Партнеры
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{{url_for('main.hospitals') }}">Больницы</a>
+          <a class="dropdown-item" href="{{url_for('main.organizations') }}">Организации</a>
           <a class="dropdown-item" href="{{url_for('main.doctors') }}">Доктора</a>
           <a class="dropdown-item" href="{{url_for('main.member_plus') }}">Стать партнером</a>
         <div class="dropdown-divider"></div>
@@ -132,8 +132,8 @@
               <a class="nav-link" href="{{url_for('users.logout') }}">logout</a>
               <a class="nav-link" href="{{url_for('posts.new_post') }}">New Post</a>
               <a class="nav-link" href="{{url_for('treatment.new_treatment') }}">New Treatment</a>
-              <a class="nav-link" href="{{url_for('hospitals.new_hospital') }}">New Hospital</a>
-              <a class="nav-link" href="{{url_for('doctors.new_doctor') }}">New Doctor</a>
+              <!-- <a class="nav-link" href="{{url_for('organizations.new_organization') }}">New Organization</a>
+              <a class="nav-link" href="{{url_for('doctors.new_doctor') }}">New Doctor</a> -->
             <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="{{url_for('main.home') }}">Еще...</a>
             </div>

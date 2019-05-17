@@ -154,8 +154,8 @@ def treatments_all():
 
 # Partners - fourth navbar section
 
-@main.route("/hospitals")
-def hospitals():
+@main.route("/organizations")
+def organizations():
     return render_template('41_partner1.html')
 
 

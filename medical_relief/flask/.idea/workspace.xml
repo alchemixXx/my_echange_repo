@@ -2,21 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8f070abd-b1c1-4aad-8f92-5022143d04e1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ru/flaskblog/doctors/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ru/flaskblog/doctors/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ru/flaskblog/partners/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ru/flaskblog/main/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/main/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ru/flaskblog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ru/flaskblog/site.db" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/site.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ru/flaskblog/templates/00_layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/templates/00_layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/flaskblog/templates/31_treat_system_1.html" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/templates/31_treat_system_1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/flaskblog/templates/32_treat_system_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/templates/32_treat_system_2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/flaskblog/templates/33_treat_system_3.html" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/templates/33_treat_system_3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/flaskblog/templates/34_treat_system_4.html" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/templates/34_treat_system_4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/flaskblog/templates/35_treat_system_5.html" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/templates/35_treat_system_5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/flaskblog/templates/35_treats_all.html" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/templates/35_treats_all.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/flaskblog/templates/36_treat_system_6.html" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/templates/36_treat_system_6.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/flaskblog/templates/37_treat_system_7.html" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/templates/37_treat_system_7.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/flaskblog/templates/38_treat_system_8.html" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/templates/38_treat_system_8.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/flaskblog/templates/39+1_treat_system_10.html" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/templates/39+1_treat_system_10.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/flaskblog/templates/39_treat_system_9.html" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/templates/39_treat_system_9.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,8 +22,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ru/flaskblog/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="39" column="14" lean-forward="true" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
+            <state relative-caret-position="130">
+              <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -38,46 +31,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ru/flaskblog/main/routes.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ru/flaskblog/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2601">
-              <caret line="153" lean-forward="true" selection-start-line="153" selection-end-line="153" />
+            <state relative-caret-position="124">
+              <caret line="58" selection-start-line="58" selection-end-line="69" selection-end-column="81" />
               <folding>
-                <element signature="e#0#53#0" expanded="true" />
+                <element signature="e#0#39#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ru/flaskblog/treatments/forms.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ru/flaskblog/doctors/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="14" column="123" selection-start-line="14" selection-start-column="71" selection-end-line="14" selection-end-column="123" />
+            <state relative-caret-position="243">
+              <caret line="31" column="23" lean-forward="true" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ru/flaskblog/news/routes.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ru/flaskblog/treatments/routes.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="59" column="37" lean-forward="true" selection-start-line="59" selection-start-column="37" selection-end-line="59" selection-end-column="37" />
-              <folding>
-                <element signature="e#0#79#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -134,16 +106,17 @@
         <option value="$PROJECT_DIR$/ru/flaskblog/templates/empty.html" />
         <option value="$PROJECT_DIR$/ru/flaskblog/templates/errors/404.html" />
         <option value="$PROJECT_DIR$/ru/flaskblog/treatments/__init__.py" />
-        <option value="$PROJECT_DIR$/ru/flaskblog/models.py" />
         <option value="$PROJECT_DIR$/ru/flaskblog/news/routes.py" />
         <option value="$PROJECT_DIR$/ru/flaskblog/__init__.py" />
         <option value="$PROJECT_DIR$/ru/flaskblog/treatments/routes.py" />
         <option value="$PROJECT_DIR$/ru/flaskblog/treatments/forms.py" />
         <option value="$PROJECT_DIR$/ru/flaskblog/main/routes.py" />
+        <option value="$PROJECT_DIR$/ru/flaskblog/models.py" />
+        <option value="$PROJECT_DIR$/ru/flaskblog/doctors/forms.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-207" />
     <option name="y" value="142" />
     <option name="width" value="1382" />
@@ -173,6 +146,20 @@
               <item name="flask" type="462c0819:PsiDirectoryNode" />
               <item name="ru" type="462c0819:PsiDirectoryNode" />
               <item name="flaskblog" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flask" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flask" type="462c0819:PsiDirectoryNode" />
+              <item name="ru" type="462c0819:PsiDirectoryNode" />
+              <item name="flaskblog" type="462c0819:PsiDirectoryNode" />
+              <item name="doctors" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flask" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flask" type="462c0819:PsiDirectoryNode" />
+              <item name="ru" type="462c0819:PsiDirectoryNode" />
+              <item name="flaskblog" type="462c0819:PsiDirectoryNode" />
+              <item name="treatments" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -236,18 +223,18 @@
       <workItem from="1557756387693" duration="8028000" />
       <workItem from="1557984035471" duration="14777000" />
       <workItem from="1558003732110" duration="692000" />
-      <workItem from="1558004625477" duration="11332000" />
+      <workItem from="1558004625477" duration="18565000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77956000" />
+    <option name="totallyTimeSpent" value="85189000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.33207262" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1785174" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -261,7 +248,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.2487725" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3289689" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -466,23 +453,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ru/flaskblog/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="39" column="14" lean-forward="true" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../04_venvs/med_flask/Lib/site-packages/flask_sqlalchemy/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-74">
-          <caret line="429" column="8" selection-start-line="429" selection-start-column="8" selection-end-line="429" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ru/flaskblog/treatments/routes.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="215">
@@ -500,26 +470,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ru/flaskblog/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="47" column="15" selection-start-line="47" selection-start-column="6" selection-end-line="47" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ru/flaskblog/treatments/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="14" column="123" selection-start-line="14" selection-start-column="71" selection-end-line="14" selection-end-column="123" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ru/flaskblog/news/routes.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -527,12 +477,65 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../../../04_venvs/med_flask/Lib/site-packages/flask_sqlalchemy/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11016">
+          <caret line="670" column="8" selection-start-line="670" selection-start-column="8" selection-end-line="670" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ru/flaskblog/doctors/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ru/flaskblog/partners/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/ru/flaskblog/main/routes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2601">
-          <caret line="153" lean-forward="true" selection-start-line="153" selection-end-line="153" />
+        <state relative-caret-position="-23">
+          <caret line="155" selection-start-line="155" selection-end-line="155" />
           <folding>
             <element signature="e#0#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ru/flaskblog/treatments/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="43" selection-end-column="83" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ru/flaskblog/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="58" selection-start-line="58" selection-end-line="69" selection-end-column="81" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ru/flaskblog/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ru/flaskblog/doctors/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="31" column="23" lean-forward="true" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
