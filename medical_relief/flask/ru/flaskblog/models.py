@@ -59,14 +59,14 @@ class Treatment(db.Model):
 class Doctors(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(128), unique=True, nullable=False)
-    sex = db.Column(db.String(256), nullable=False)
-    specialization = db.Column(db.String(256), nullable=False)
-    academic_degree = db.Column(db.String(256), nullable=True)
-    employer = db.Column(db.String(256), nullable=True)
-    position = db.Column(db.String(256), nullable=True)
-    city = db.Column(db.String(256), nullable=True)
-    age = db.Column(db.Integer, nullable=True)
-    biography = db.Column(db.Text, nullable=True)
+    sex = db.Column(db.String(256), nullable=False, default='Nothing')
+    specialization = db.Column(db.String(256), nullable=True, default='Nothing')
+    academic_degree = db.Column(db.String(256), nullable=True, default='Nothing')
+    employer = db.Column(db.String(256), nullable=True, default='Nothing')
+    position = db.Column(db.String(256), nullable=True, default='Nothing')
+    city = db.Column(db.String(256), nullable=True, default='Nothing')
+    age = db.Column(db.Integer, nullable=True, default='Nothing')
+    biography = db.Column(db.Text, nullable=True, default='Nothing')
     image_file = db.Column(db.String(50), nullable=False, default='no_photo.png')
 
     def __str__(self):
