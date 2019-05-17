@@ -75,64 +75,74 @@ def directs_all():
 def treatment_one():
     page = request.args.get('page', 1, type=int)
     posts = Treatment.query.filter(Treatment.direction.in_(('sys1','Дыхательная система'))).paginate(page=page, per_page=7)
-    return render_template('31_treat_system_1.html', posts=posts)
+    direction = Treatment.query.filter(Treatment.direction.in_(('sys1','Дыхательная система'))).first()
+    return render_template('31_treat_system_1.html', posts=posts, direction=direction)
 
 
 @main.route("/treatment_two")
 def treatment_two():
     page = request.args.get('page', 1, type=int)
     posts = Treatment.query.filter(Treatment.direction.in_(('sys2', 'Пищеварительная система'))).paginate(page=page, per_page=7)
-    return render_template('32_treat_system_2.html', posts=posts)
+    direction = Treatment.query.filter(Treatment.direction.in_(('sys2', 'Пищеварительная система'))).first()
+    return render_template('32_treat_system_2.html', posts=posts, direction=direction)
 
 
 @main.route("/treatment_three")
 def treatment_three():
     page = request.args.get('page', 1, type=int)
     posts = Treatment.query.filter(Treatment.direction.in_(('sys3', 'Мочевыделительная система'))).paginate(page=page, per_page=7)
-    return render_template('33_treat_system_3.html', posts=posts)
+    direction = Treatment.query.filter(Treatment.direction.in_(('sys3', 'Мочевыделительная система'))).first()
+    return render_template('33_treat_system_3.html', posts=posts, direction=direction)
 
 
 @main.route("/treatment_four")
 def treatment_four():
     page = request.args.get('page', 1, type=int)
     posts = Treatment.query.filter(Treatment.direction.in_(('sys4', 'Опорно-двигательный аппарат'))).paginate(page=page, per_page=7)
-    return render_template('34_treat_system_4.html', posts=posts)
+    direction = Treatment.query.filter(Treatment.direction.in_(('sys4', 'Опорно-двигательный аппарат'))).first()
+    return render_template('34_treat_system_4.html', posts=posts, direction=direction)
 
 @main.route("/treatment_five")
 def treatment_five():
     page = request.args.get('page', 1, type=int)
     posts = Treatment.query.filter(Treatment.direction.in_(('sys5', 'Циркуляторная система'))).paginate(page=page, per_page=7)
-    return render_template('35_treat_system_5.html', posts=posts)
+    direction = Treatment.query.filter(Treatment.direction.in_(('sys5', 'Циркуляторная система'))).first()
+    return render_template('35_treat_system_5.html', posts=posts, direction=direction)
 
 @main.route("/treatment_six")
 def treatment_six():
     page = request.args.get('page', 1, type=int)
     posts = Treatment.query.filter(Treatment.direction.in_(('sys6', 'Нервная система'))).paginate(page=page, per_page=7)
-    return render_template('36_treat_system_6.html', posts=posts)
+    direction = Treatment.query.filter(Treatment.direction.in_(('sys6', 'Нервная система'))).first()
+    return render_template('36_treat_system_6.html', posts=posts, direction=direction)
 
 @main.route("/treatment_seven")
 def treatment_seven():
     page = request.args.get('page', 1, type=int)
     posts = Treatment.query.filter(Treatment.direction.in_(('sys7', 'Сенсорная система'))).paginate(page=page, per_page=7)
-    return render_template('37_treat_system_7.html', posts=posts)
+    direction = Treatment.query.filter(Treatment.direction.in_(('sys7', 'Сенсорная система'))).first()
+    return render_template('37_treat_system_7.html', posts=posts, direction=direction)
 
 @main.route("/treatment_eight")
 def treatment_eight():
     page = request.args.get('page', 1, type=int)
     posts = Treatment.query.filter(Treatment.direction.in_(('sys8', 'Покровная система'))).paginate(page=page, per_page=7)
-    return render_template('38_treat_system_8.html', posts=posts)
+    direction = Treatment.query.filter(Treatment.direction.in_(('sys8', 'Покровная система'))).first()
+    return render_template('38_treat_system_8.html', posts=posts, direction=direction)
 
 @main.route("/treatment_nine")
 def treatment_nine():
     page = request.args.get('page', 1, type=int)
     posts = Treatment.query.filter(Treatment.direction.in_(('sys9', 'Эндокринная система'))).paginate(page=page, per_page=7)
-    return render_template('39_treat_system_9.html', posts=posts)
+    direction = Treatment.query.filter(Treatment.direction.in_(('sys9', 'Эндокринная система'))).first()
+    return render_template('39_treat_system_9.html', posts=posts, direction=direction)
 
 @main.route("/treatment_ten")
 def treatment_ten():
     page = request.args.get('page', 1, type=int)
     posts = Treatment.query.filter(Treatment.direction.in_(('sys10', 'Органы кроветворения и иммунной системы'))).paginate(page=page, per_page=7)
-    return render_template('39+1_treat_system_10.html', posts=posts)
+    direction = Treatment.query.filter(Treatment.direction.in_(('sys10', 'Органы кроветворения и иммунной системы'))).first()
+    return render_template('39+1_treat_system_10.html', posts=posts, direction=direction)
 
 @main.route("/treatments_all")
 def treatments_all():
