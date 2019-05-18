@@ -2,107 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8f070abd-b1c1-4aad-8f92-5022143d04e1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/doctors/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/doctors/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/doctors/routes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/errors/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/errors/handlers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/partners/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/partners/routes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/static/doctor_pics/Muh_Ali.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/static/doctor_pics/no_photo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/static/images/JW&amp;AE.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/static/images/equipment_improvement/AE+HAROLD COBB.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/static/images/equipment_improvement/AE+JW+HC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/static/images/equipment_improvement/Amosov institute 1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/static/images/equipment_improvement/HC and patients.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/static/images/equipment_improvement/My work.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/static/images/equipment_improvement/remodeling.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/static/images/equipment_improvement/thanks.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/static/images/exchange_programm/Flash 047.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/static/images/exchange_programm/Flash 048.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/static/images/exchange_programm/Flash 049.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/static/images/exchange_programm/Flash 050.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/static/images/exchange_programm/Flash 053.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/static/images/exchange_programm/RUDENKO CHART 2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/static/images/exchange_programm/Welcome to Providence.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/static/images/exchange_programm/pmo2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/static/images/exchange_programm/pmo4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/static/images/foriegn_treatment/1 month after operation.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/static/images/foriegn_treatment/Dr_R_Wallace.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/static/images/foriegn_treatment/after surgery.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/static/images/foriegn_treatment/before surgery.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/static/images/foriegn_treatment/best doctor.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/static/images/foriegn_treatment/evaluation1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/static/images/foriegn_treatment/evaluation2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/static/images/foriegn_treatment/evaluation3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/static/images/foriegn_treatment/hospital.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/static/images/foriegn_treatment/intensive care.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/static/images/foriegn_treatment/laser correction center.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/static/images/foriegn_treatment/laser correction.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/static/images/foriegn_treatment/pastic surgery 2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/static/images/foriegn_treatment/pastic surgery.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/static/images/foriegn_treatment/the team.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/static/partners_pics/no_image.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/static/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/static/treatment_pics/PostgreSQL-Joins.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/static/treatment_pics/default.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/templates/00_create_doctor.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/templates/00_create_treatment.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/templates/30_treat_system_layout.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/templates/31_treat_system_1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/templates/32_treat_system_2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/templates/33_treat_system_3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/templates/34_treat_system_4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/templates/35_treat_system_5.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/templates/36_treat_system_6.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/templates/37_treat_system_7.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/templates/38_treat_system_8.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/templates/39+1_treat_system_10.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/templates/39_treat_system_9.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/templates/42_doctors.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/templates/42_specific_doctor.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/templates/71_help_us.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/templates/errors/403.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/templates/errors/404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/templates/errors/500.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/templates/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/templates/treatment.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/treatments/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/treatments/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ru/flaskblog/treatments/routes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/flask.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/flask.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/flaskblog/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/flaskblog/main/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/main/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/flaskblog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/flaskblog/news/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/news/routes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ru/flaskblog/site.db" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/site.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/flaskblog/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/static/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/flaskblog/templates/00_account.html" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/templates/00_account.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/flaskblog/templates/00_layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/templates/00_layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/flaskblog/templates/00_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/templates/00_login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ru/flaskblog/templates/01_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/templates/01_home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/flaskblog/templates/11_about_us.html" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/templates/11_about_us.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/flaskblog/templates/12_history.html" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/templates/12_history.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/flaskblog/templates/14_member_plus.html" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/templates/14_member_plus.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/flaskblog/templates/15_more_about.html" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/templates/15_more_about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/flaskblog/templates/21_program1.html" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/templates/21_program1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/flaskblog/templates/22_program2.html" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/templates/22_program2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/flaskblog/templates/23_program3.html" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/templates/23_program3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/flaskblog/templates/24_program4.html" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/templates/24_program4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/flaskblog/templates/25_programs.html" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/templates/25_programs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/flaskblog/templates/31_treat1.html" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/templates/13_team.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/flaskblog/templates/32_treat2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/flaskblog/templates/33_treat3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/flaskblog/templates/34_treat4.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ru/flaskblog/templates/35_treats_all.html" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/templates/35_treats_all.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/flaskblog/templates/42_partner2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ru/flaskblog/templates/42_specific_doctor.html" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/templates/42_specific_doctor.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ru/flaskblog/templates/51_news.html" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/templates/51_news.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/flaskblog/templates/51_news.html___jb_old___" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/flaskblog/templates/61_contacts.html" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/templates/61_contacts.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ru/flaskblog/templates/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/ru/flaskblog/templates/post.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ru/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ru/requirements.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -112,13 +20,73 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ru/flaskblog/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="317">
               <caret line="42" selection-start-line="42" selection-end-line="42" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ru/flaskblog/doctors/routes.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1188">
+              <caret line="81" selection-start-line="81" selection-end-line="81" />
+              <folding>
+                <element signature="e#0#79#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ru/flaskblog/doctors/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="594">
+              <caret line="33" column="11" lean-forward="true" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="11" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ru/flaskblog/news/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ru/flaskblog/news/routes.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="52" column="25" lean-forward="true" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#79#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ru/flaskblog/treatments/routes.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" column="75" lean-forward="true" selection-start-line="19" selection-start-column="75" selection-end-line="19" selection-end-column="75" />
+              <folding>
+                <element signature="e#0#79#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -190,9 +158,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-32" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="296" />
+    <option name="y" value="34" />
+    <option name="width" value="1393" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -218,6 +187,27 @@
               <item name="flask" type="462c0819:PsiDirectoryNode" />
               <item name="ru" type="462c0819:PsiDirectoryNode" />
               <item name="flaskblog" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flask" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flask" type="462c0819:PsiDirectoryNode" />
+              <item name="ru" type="462c0819:PsiDirectoryNode" />
+              <item name="flaskblog" type="462c0819:PsiDirectoryNode" />
+              <item name="doctors" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flask" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flask" type="462c0819:PsiDirectoryNode" />
+              <item name="ru" type="462c0819:PsiDirectoryNode" />
+              <item name="flaskblog" type="462c0819:PsiDirectoryNode" />
+              <item name="news" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flask" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flask" type="462c0819:PsiDirectoryNode" />
+              <item name="ru" type="462c0819:PsiDirectoryNode" />
+              <item name="flaskblog" type="462c0819:PsiDirectoryNode" />
+              <item name="treatments" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -286,12 +276,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97284000" />
+    <option name="totallyTimeSpent" value="98572000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23825318" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23825318" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -305,7 +296,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.42201835" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.42201835" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -474,16 +465,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ru/flaskblog/news/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="39" lean-forward="true" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin_params.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -526,16 +507,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ru/flaskblog/treatments/routes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="75" lean-forward="true" selection-start-line="19" selection-start-column="75" selection-end-line="19" selection-end-column="75" />
-          <folding>
-            <element signature="e#0#79#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ru/flaskblog/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="317">
@@ -568,8 +539,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ru/flaskblog/news/routes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-26">
-          <caret line="16" column="37" lean-forward="true" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+        <state relative-caret-position="352">
+          <caret line="52" column="25" lean-forward="true" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#79#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ru/flaskblog/treatments/routes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="75" lean-forward="true" selection-start-line="19" selection-start-column="75" selection-end-line="19" selection-end-column="75" />
+          <folding>
+            <element signature="e#0#79#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ru/flaskblog/doctors/routes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1188">
+          <caret line="81" selection-start-line="81" selection-end-line="81" />
           <folding>
             <element signature="e#0#79#0" expanded="true" />
           </folding>
@@ -578,20 +569,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ru/flaskblog/doctors/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="15" column="39" lean-forward="true" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
+        <state relative-caret-position="594">
+          <caret line="33" column="11" lean-forward="true" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="11" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ru/flaskblog/doctors/routes.py">
+    <entry file="file://$PROJECT_DIR$/ru/flaskblog/news/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="79" column="58" lean-forward="true" selection-start-line="79" selection-start-column="49" selection-end-line="79" selection-end-column="58" />
+        <state relative-caret-position="330">
+          <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="23" />
           <folding>
-            <element signature="e#0#79#0" expanded="true" />
+            <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
