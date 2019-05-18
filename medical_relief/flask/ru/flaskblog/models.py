@@ -17,7 +17,7 @@ class News(db.Model):
     pub_date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
 
     def __repr__(self):
-        return f"New('{self.title}', '{self.pub_date}')"
+        return f"News('{self.title}', '{self.pub_date}')"
 
 
 class User(db.Model, UserMixin):
@@ -43,3 +43,54 @@ class User(db.Model, UserMixin):
 
     def __repr__(self):
         return f'User("{self.username}", "{self.email}", "{self.image_file}")'
+
+
+class Treatment(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(128), unique=True, nullable=False)
+    direction = db.Column(db.String(256), nullable=False)
+    content = db.Column(db.Text, nullable=False)
+    image_file = db.Column(db.String(20), nullable=False, default='default.jpg')
+
+    def __repr__(self):
+        return f"Treatment('{self.title}', '{self.direction}')"
+
+
+class Doctors(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(128), unique=True, nullable=False)
+    sex = db.Column(db.String(256), nullable=False, default='Nothing')
+    specialization = db.Column(db.String(256), nullable=True, default='Nothing')
+    academic_degree = db.Column(db.String(256), nullable=True, default='Nothing')
+    employer = db.Column(db.String(256), nullable=True, default='Nothing')
+    position = db.Column(db.String(256), nullable=True, default='Nothing')
+    city = db.Column(db.String(256), nullable=True, default='Nothing')
+    age = db.Column(db.Integer, nullable=True, default='Nothing')
+    biography = db.Column(db.Text, nullable=True, default='Nothing')
+    image_file = db.Column(db.String(50), nullable=False, default='no_photo.png')
+
+    def __str__(self):
+        return f"This Doctor has attributes('{self.name}', '{self.sex}', '{self.specialization}', '{self.academic_degree}'," \
+            f" '{self.employer}','{self.position}', '{self.city}', '{self.age}' )"
+
+    def __repr__(self):
+        return f"Doctors({self.__class__.__name__, self.__dict__})"
+
+
+class Partners(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(128), unique=True, nullable=False)
+    specialization = db.Column(db.String(256), nullable=False)
+    city = db.Column(db.String(256), nullable=True)
+    country = db.Column(db.String(256), nullable=True)
+    address = db.Column(db.String(256), nullable=True)
+    link = db.Column(db.String(256), nullable=True)
+    content = db.Column(db.Text, nullable=True)
+    image_file = db.Column(db.String(50), nullable=False, default='no_image.jpg')
+
+    def __str__(self):
+        return f"This Partner has attributes('{self.title}', '{self.specialization}', '{self.link}'," \
+            f" '{self.address}', '{self.city}', '{self.country}' )"
+
+    def __repr__(self):
+        return f"Doctors({self.__class__.__name__, self.__dict__})"

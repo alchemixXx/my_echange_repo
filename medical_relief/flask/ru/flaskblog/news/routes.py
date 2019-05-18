@@ -16,7 +16,6 @@ def new_post():
     if form.validate_on_submit():
         picture = form.file_name.data
         image_file = url_for('static', filename='post_pics/' + picture)
-
         post = News(title=form.title.data, content=form.content.data, image_file=image_file, )
         db.session.add(post)
         db.session.commit()

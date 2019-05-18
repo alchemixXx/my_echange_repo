@@ -65,26 +65,37 @@
           Программы
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{{url_for('main.direct_one') }}">Программа_1</a>
-          <a class="dropdown-item" href="{{url_for('main.direct_two') }}">Программа_2</a>
-          <a class="dropdown-item" href="{{url_for('main.direct_three') }}">Программа_3</a>
-          <a class="dropdown-item" href="{{url_for('main.direct_four') }}">Программа_4</a>
+          <a class="dropdown-item" href="{{url_for('main.direct_one') }}">Программа Медицинского Обмена</a>
+          <a class="dropdown-item" href="{{url_for('main.direct_two') }}">Лечение за рубежом</a>
+          <a class="dropdown-item" href="{{url_for('main.direct_three') }}">Улучшение технического оснащения медицинских учреждений</a>
+          <!-- <a class="dropdown-item" href="{{url_for('main.direct_four') }}">Программа_4</a> -->
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="{{url_for('main.directs_all') }}">Посмотреть все программы</a>
         </div>
       </li>
+
+
+      <!-- <li class="nav-item">
+          <a class="nav-link" href="{{url_for('main.treatments_all') }}">Лечение</a>
+      </li> -->
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCuring" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Лечение
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{{url_for('main.treatment_one') }}">Клиника_1</a>
-          <a class="dropdown-item" href="{{url_for('main.treatment_two') }}">Клиника_2</a>
-          <a class="dropdown-item" href="{{url_for('main.treatment_three') }}">Клиника_3</a>
-          <a class="dropdown-item" href="{{url_for('main.treatment_four') }}">Клиника_4</a>
+          <a class="dropdown-item" href="{{url_for('main.treatment_one') }}">Дыхательная система</a>
+          <a class="dropdown-item" href="{{url_for('main.treatment_two') }}">Пищеварительная система</a>
+          <a class="dropdown-item" href="{{url_for('main.treatment_three') }}">Мочевыделительная система</a>
+          <a class="dropdown-item" href="{{url_for('main.treatment_four') }}">Опорно-двигательный аппарат</a>
+          <a class="dropdown-item" href="{{url_for('main.treatment_five') }}">Циркуляторная система</a>
+          <a class="dropdown-item" href="{{url_for('main.treatment_six') }}">Нервная система</a>
+          <a class="dropdown-item" href="{{url_for('main.treatment_seven') }}">Сенсорная система</a>
+          <a class="dropdown-item" href="{{url_for('main.treatment_eight') }}">Покровная система</a>
+          <a class="dropdown-item" href="{{url_for('main.treatment_nine') }}">Эндокринная система</a>
+          <a class="dropdown-item" href="{{url_for('main.treatment_ten') }}">Органы кроветворения и иммунной системы</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="{{url_for('main.treatments_all') }}">Еще...</a>
+          <a class="dropdown-item" href="{{url_for('main.treatments_all') }}">Все лечения</a>
         </div>
       </li>
 
@@ -93,7 +104,7 @@
           Партнеры
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{{url_for('main.hospitals') }}">Больницы</a>
+          <a class="dropdown-item" href="{{url_for('main.organizations') }}">Организации</a>
           <a class="dropdown-item" href="{{url_for('main.doctors') }}">Доктора</a>
           <a class="dropdown-item" href="{{url_for('main.member_plus') }}">Стать партнером</a>
         <div class="dropdown-divider"></div>
@@ -107,13 +118,36 @@
       <li class="nav-item">
         <a class="nav-link" href="{{url_for('main.contacts') }}">Контакты</a>
       </li>
+
+      <li class="nav-item">
+          <a class="nav-link" href="{{url_for('main.help_us') }}">Поддержать проект</a>
+      </li>
+          {% if current_user.is_authenticated %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPartners" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              admin_panel
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="nav-link" href="{{url_for('users.account') }}">account</a>
+              <a class="nav-link" href="{{url_for('users.logout') }}">logout</a>
+              <a class="nav-link" href="{{url_for('posts.new_post') }}">New Post</a>
+              <a class="nav-link" href="{{url_for('treatment.new_treatment') }}">New Treatment</a>
+            {# <a class="nav-link" href="{{url_for('partners.new_organization') }}">New Organization</a> #}
+              <a class="nav-link" href="{{url_for('doctors.new_doctor') }}">New Doctor</a>
+            <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{{url_for('main.home') }}">Еще...</a>
+            </div>
+          </li>
+          {%endif%}
+
       <!-- <li class="nav-item">
         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
       </li> -->
     </ul>
 
 <!-- Кнопка "поддержать фонд" -->
-<button type="button" class="btn btn-outline-primary" id="donate">Поддержать проект!</button>
+<!-- <button type="button" class="btn btn-outline-primary" id="donate">Поддержать проект!</button> -->
+  <!-- <a class="dropdown-item" href="{{url_for('main.help_us') }}">Поддрежать проект</a> -->
 <!-- <button type="button" class="btn btn-success">Поддержать проект!</button> -->
     <!-- <button type="button" class="btn btn-primary btn-lg">"Поддержать фонд!"</button> -->
 
@@ -123,15 +157,18 @@
           <a class="nav-link" href="#">ua</a>
         </li>
         <li class="nav-item">
-          {% if current_user.is_authenticated %}
-          <a class="nav-link" href="{{url_for('users.account') }}">account</a>
+          <a class="nav-link" href="#">en</a>
+        </li>
+        <li class="nav-item">
+          <!-- {% if current_user.is_authenticated %} -->
+          <!-- <a class="nav-link" href="{{url_for('users.account') }}">account</a>
           <a class="nav-link" href="{{url_for('users.logout') }}">logout</a>
-            <a class="nav-link" href="{{url_for('posts.new_post') }}">New Post</a>
-          {%else%}
+            <a class="nav-link" href="{{url_for('posts.new_post') }}">New Post</a> -->
+          <!-- {%else%} -->
 
-            <a class="nav-link" href="{{url_for('users.login') }}">login</a>
+            <!-- <a class="nav-link" href="{{url_for('users.login') }}">login</a> -->
 <!--          <a class="nav-link" href="{{url_for('users.login') }}">en</a>-->
-          {%endif%}
+          <!-- {%endif%} -->
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">ru</a>
@@ -183,6 +220,7 @@
               <p>Here you can use rows and columns here to organize your footer content.</p>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit amet numquam iure provident voluptate esse
                 quasi, veritatis totam voluptas nostrum.</p>
+                <small>*Для того, что бы войти как администратор, нажмите <a href="{{url_for('users.login') }}">login</a></small>
                 <p>© 2019 Copyright:
                   <a href="https://mdbootstrap.com/education/bootstrap/"> Hello world!</a></p>
 
@@ -226,6 +264,11 @@
                 <li>
                   <p>
                     <a href="{{url_for('main.contacts') }}">Контакты</a>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <a href="{{url_for('main.help_us') }}">Поддержать проект</a>
                   </p>
                 </li>
               </ul>
@@ -272,16 +315,16 @@
               <h5 class="font-weight-bold text-uppercase mb-4">Follow Us</h5>
 
               <!-- Facebook -->
-              <a type="button" class="btn-floating btn-fb">
+              <a type="button" class="btn-floating btn-fb" href="#" target="_blank">
                 <i class="fab fa-facebook-f"><img src="static/images/facebook3.png" alt="Facebook"></i>
               </a>
               <!-- Twitter -->
-              <a type="button" class="btn-floating btn-tw">
+              <a type="button" class="btn-floating btn-tw" href="#" target="_blank">
                 <i class="fab fa-twitter"><img src="static/images/twitter3.png" alt="Twitter"></i>
               </a>
 
               <!--Linkedin -->
-              <a type="button" class="btn-floating li-ic">
+              <a type="button" class="btn-floating li-ic" href="#" target="_blank">
                 <i class="fab fa-linkedin-in fa-lg white-text mr-4"><img src="static/images/linked3.png" alt="LinkedIn"></i>
               </a>
 
@@ -308,5 +351,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- <script src="{{ url_for('static', filename = 'script.js' )}}" type="text/javascript" ></script> -->
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'style.css' )}}"> -->
+    <script type="text/javascript" src="script.js"></script>
   </body>
 </html>
