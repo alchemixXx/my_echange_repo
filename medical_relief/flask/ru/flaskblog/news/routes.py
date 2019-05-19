@@ -40,7 +40,6 @@ def update_post(post_id):
     if form.validate_on_submit():
         post.title = form.title.data
         post.content = form.content.data
-
         picture = form.file_name.data
         image_file = url_for('static', filename='post_pics/' + picture)
 

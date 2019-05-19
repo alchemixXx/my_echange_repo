@@ -80,11 +80,11 @@ class Doctors(db.Model):
 class Partners(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(128), unique=True, nullable=False)
+    address = db.Column(db.String(256), nullable=True)
+    link = db.Column(db.String(256), nullable=True)
     specialization = db.Column(db.String(256), nullable=False)
     city = db.Column(db.String(256), nullable=True)
     country = db.Column(db.String(256), nullable=True)
-    address = db.Column(db.String(256), nullable=True)
-    link = db.Column(db.String(256), nullable=True)
     content = db.Column(db.Text, nullable=True)
     image_file = db.Column(db.String(50), nullable=False, default='no_image.jpg')
 

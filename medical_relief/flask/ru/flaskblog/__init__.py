@@ -31,7 +31,7 @@ def create_app(config_class = Config):
     from flaskblog.errors.handlers import errors
     from flaskblog.treatments.routes import treatment
     from flaskblog.doctors.routes import doctors
-    # from flaskblog.partners.routes import organizations
+    from flaskblog.organizations.routes import organizations
 
     app.register_blueprint(users)
     app.register_blueprint(posts)
@@ -39,7 +39,7 @@ def create_app(config_class = Config):
     app.register_blueprint(errors)
     app.register_blueprint(treatment)
     app.register_blueprint(doctors)
-    # app.register_blueprint(organizations)
+    app.register_blueprint(organizations)
 
     return app
 

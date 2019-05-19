@@ -156,7 +156,7 @@ def treatments_all():
 
 @main.route("/organizations")
 def organizations():
-    return render_template('41_partner1.html')
+    return render_template('41_organizations.html')
 
 
 @main.route("/doctors")
