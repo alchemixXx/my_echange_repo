@@ -1,0 +1,95 @@
+{% extends "00_layout.html" %}
+{% block content %}
+
+<main>
+
+<!-- MAIN CONTENT ZONE STARTS -->
+      <div class="jumbotron">
+        <div class="container">
+
+
+<div class="main_info">
+    <h2></h2>
+            <hr class="my-4">
+            <div class="news_zone">
+               <img class="pict_3 img-thumbnail" src="{{ post.image_file }}" alt='__sorry__'>
+
+               <article class="media content-section">
+                 <div class="media-body">
+                   <h2><a class="article-title" href="{{url_for('team.teammate', teammate_id=post.id)}}">{{post.name}}</a></h2>
+                   {% if post.education != "None" %}
+                      <p>Образование: {{ post.education }}</p>
+                   {% endif %}
+                   {% if post.position != "None" %}
+                      <p>Должность в Фонде: {{ post.position }}</p>
+                   {% endif %}
+
+                    {% if post.work != "None" %}
+                       <p>Место основной работы: {{ post.work }}</p>
+                    {% endif %}
+                    {% if post.work_position != "None" %}
+                       <p>Должность на основной работе: {{ post.work_position }}</p>
+                    {% endif %}
+
+                    {% if post.social_link != "None" %}
+                       <p>Страничка в сети: <a href="{{ post.social_link }}" target="_blank"> {{ post.social_link }} </a> </p>
+                    {% endif %}
+
+
+                   {%if current_user.is_authenticated %}
+                   <div class="">
+                     <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{url_for('team.update_teammate', teammate_id=post.id)}}">Update</a>
+                     <button class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal" type="button" name="button">Delete</button>
+                   </div>
+                   {%endif%}
+                 </div>
+               <hr>
+               </article>
+
+      </div>
+      {% if post.biography != "None" %}
+         <p class="">{{post.biography}}</p>
+      {% endif %}
+
+
+  <div class="container for_post">
+   <!-- Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="deleteModalLabel">Delete post?</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <form class="" action="{{url_for('team.delete_teammate', teammate_id=post.id)}}" method="post">
+                <input type="submit" class="btn btn-danger" name="" value="Delete">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p> -->
+{#  <p class="lead">Мы будем рады каждому Вашему посещению и постараемся быть Вам полезными.</p>#}
+
+
+</div>
+
+
+
+
+
+        </div>
+    </div>
+
+
+</main>
+
+{% endblock content%}

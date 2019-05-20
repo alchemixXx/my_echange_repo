@@ -12,10 +12,31 @@
     <h2>Наша команда</h2>
             <hr class="my-4">
 
-  <div class="container">
-    
+            <div class="news_zone">
+              {% for post in posts.items %}
+               <img class="pict_2 img-thumbnail" src="{{ post.image_file }}" alt='__sorry__'>
 
-  </div>
+               <article class="media content-section">
+                 <div class="media-body">
+                   <h2><a class="article-title" href="{{url_for('team.teammate', teammate_id=post.id)}}">{{post.name}}</a></h2>
+                   {% if post.position != "None" %}
+                      <p>Должность в Фонде: {{ post.position }}</p>
+                   {% endif %}
+                   {% if post.education != "None" %}
+                      <p>Образование: {{ post.education }}</p>
+                   {% endif %}
+                   {% if post.social_link != "None" %}
+                      <p>Страничка в сети: <a href="{{ post.social_link }}" target="_blank">{{ post.social_link }}</a> </p>
+                   {% endif %}
+
+
+                 </div>
+               <hr>
+               </article>
+
+              {% endfor %}
+
+            </div>
 
 {#  <p class="lead">Мы будем рады каждому Вашему посещению и постараемся быть Вам полезными.</p>#}
 

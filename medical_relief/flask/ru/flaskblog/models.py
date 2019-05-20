@@ -94,3 +94,22 @@ class Partners(db.Model):
 
     def __repr__(self):
         return f"Doctors({self.__class__.__name__, self.__dict__})"
+
+
+class Team(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(128), unique=True, nullable=False)
+    position = db.Column(db.String(256), nullable=False)
+    education = db.Column(db.String(256), nullable=False)
+    work = db.Column(db.String(256), nullable=False)
+    work_position = db.Column(db.String(256), nullable=False)
+    social_link = db.Column(db.String(256), nullable=False)
+    biography = db.Column(db.Text, nullable=False)
+    image_file = db.Column(db.String(50), nullable=False, default='default.jpg')
+
+    def __str__(self):
+        return f"This Partner has attributes('{self.name}', '{self.position}', '{self.social_link}'," \
+            f" '{self.education}', '{self.work}', '{self.work_position}' )"
+
+    def __repr__(self):
+        return f"Doctors({self.__class__.__name__, self.__dict__})"

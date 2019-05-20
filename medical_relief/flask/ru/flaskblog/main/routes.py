@@ -1,6 +1,6 @@
 from flask import render_template, request, Blueprint
 
-from flaskblog.models import User, News, Treatment, Doctors, Partners
+from flaskblog.models import User, News, Treatment, Doctors, Partners, Team
 
 main = Blueprint('main', __name__)
 
@@ -29,8 +29,9 @@ def history():
 
 @main.route("/team")
 def team():
-    return render_template('13_team.html')
-
+    page = request.args.get('page', 1, type=int)
+    posts = Team.query.order_by(Team.name).paginate(page=page, per_page=7)
+    return render_template('13_team.html', posts=posts)
 
 @main.route("/member_plus")
 def member_plus():
