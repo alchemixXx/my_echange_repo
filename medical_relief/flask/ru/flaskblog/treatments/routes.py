@@ -29,7 +29,7 @@ def new_treatment():
 @treatment.route("/treatment/<int:treat_id>")
 def treat(treat_id):
     treat = Treatment.query.get_or_404(treat_id)
-    return render_template('treatment.html', title=treat.title, post=treat,  image_file=treat.image_file)
+    return render_template('35_specific_treatment.html', title=treat.title, post=treat,  image_file=treat.image_file)
 
 @treatment.route("/treatment/<int:treat_id>/update", methods=['GET', 'POST'])
 @login_required

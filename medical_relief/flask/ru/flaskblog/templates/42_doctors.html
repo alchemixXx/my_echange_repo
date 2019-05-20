@@ -11,7 +11,7 @@
 
 
 <div class="main_info">
-    <h2>Доктора</h2>
+    <h2>Доктора-партнеры</h2>
 
             <hr class="my-4">
 
@@ -20,7 +20,7 @@
                <img class="pict_2 img-thumbnail" src="{{ post.image_file }}" alt='__sorry__'>
 
                <article class="media content-section">
-                 <div class="lead media-body">
+                 <div class="media-body">
                    <h2><a class="article-title" href="{{url_for('doctors.doctor', doctor_id=post.id)}}">{{post.name}}</a></h2>
                      {% if post.sex == 'male'%}
                       <p>Пол: Мужчина</p>
@@ -43,13 +43,8 @@
 
               {% endfor %}
 
-</div>
-<div class="centred">
-    {% block treatment %}
-
-    {% endblock treatment %}
-  </div>
-  <p class="lead">Мы будем рады каждому Вашему посещению и постараемся быть Вам полезными.</p>
+            </div>
+{#  <p class="lead">Мы будем рады каждому Вашему посещению и постараемся быть Вам полезными.</p>#}
 
 
 

@@ -7,11 +7,11 @@ from flaskblog.models import Partners
 
 class OrganizationForm(FlaskForm):
     title = StringField("Name of the organization", validators=[DataRequired()])
-    address = SelectField("What address does it have?", validators=[DataRequired()])
+    address = StringField("What address does it have?", validators=[DataRequired()])
     link = StringField("Please enter a website address")
     specialization = StringField("What specialization does it have?")
     city = StringField("In which city it located?")
-    country = StringField("In which city it located?")
+    country = StringField("In which country it located?")
     content = TextAreaField('Description of work of the organization')
     picture = FileField("Choose a picture", validators=[FileAllowed(['jpg', 'png'])])
     file_name = StringField("File name", validators=[DataRequired()])
@@ -20,7 +20,7 @@ class OrganizationForm(FlaskForm):
 
 class UpdateOrganiztionForm(FlaskForm):
     title = StringField("Name of the organization", validators=[DataRequired()])
-    address = SelectField("What address does it have?", validators=[DataRequired()])
+    address = StringField("What address does it have?", validators=[DataRequired()])
     link = StringField("Please enter a website address")
     specialization = StringField("What specialization does it have?")
     city = StringField("In which city it located?")
@@ -32,7 +32,7 @@ class UpdateOrganiztionForm(FlaskForm):
 
     def validate_title(self, title):
         if title != title.data:
-            title = Partners.query.filter_by(name=title.data).first()
+            title = Partners.query.filter_by(title=title.data).first()
 
     def validate_address(self, address):
         if address != address.data:

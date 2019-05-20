@@ -1,6 +1,6 @@
 from flask import render_template, request, Blueprint
 
-from flaskblog.models import User, News, Treatment, Doctors
+from flaskblog.models import User, News, Treatment, Doctors, Partners
 
 main = Blueprint('main', __name__)
 
@@ -156,7 +156,9 @@ def treatments_all():
 
 @main.route("/organizations")
 def organizations():
-    return render_template('41_organizations.html')
+    page = request.args.get('page', 1, type=int)
+    posts = Partners.query.order_by(Partners.title).paginate(page=page, per_page=7)
+    return render_template('41_organizations.html', posts=posts)
 
 
 @main.route("/doctors")
