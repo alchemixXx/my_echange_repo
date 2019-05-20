@@ -3,6 +3,7 @@ from flaskblog import db, bcrypt, mail
 from flaskblog.treatments.forms import TreatmentForm, UpdateTreatmentForm
 from flaskblog.models import User, News, Treatment
 from flask_login import login_required
+from flaskblog.utils import save_picture
 
 
 treatment = Blueprint('treatment', __name__)
@@ -15,7 +16,7 @@ treatment = Blueprint('treatment', __name__)
 def new_treatment():
     form = TreatmentForm()
     if form.validate_on_submit():
-        picture = form.file_name.data
+        picture = save_picture(form.picture.data)
         image_file = url_for('static', filename='treatment_pics/' + picture)
         treat = Treatment(title=form.title.data, content=form.content.data,
                          image_file=image_file, direction=form.direction.data)
@@ -38,16 +39,19 @@ def update_treat(treat_id):
     # if post.author != current_user
     # if current_user:
     #     abort(403)
-    form = TreatmentForm()
+    form = UpdateTreatmentForm()
     if form.validate_on_submit():
+        if form.picture.data:
+            picture_file = save_picture(form.picture.data)
+            treat.image_file = url_for('static', filename='treatment_pics/' + picture_file)
         treat.title = form.title.data
         treat.content = form.content.data
         treat.direction = form.direction.data
-        picture = form.file_name.data
-        image_file = url_for('static', filename='treatment_pics/' + picture)
+        # picture = form.file_name.data
+        # image_file = url_for('static', filename='treatment_pics/' + picture)
 
         db.session.commit()
-        flash('Treatment has beend updated', 'success')
+        flash('Treatment has been updated', 'success')
         return redirect(url_for('treatment.treat', treat_id=treat.id))
     elif request.method == "GET":
         form.title.data = treat.title

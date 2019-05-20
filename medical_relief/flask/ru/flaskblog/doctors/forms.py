@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileAllowed
 from wtforms import StringField, SubmitField, TextAreaField, SelectField
-from wtforms.validators import DataRequired
+from wtforms.validators import DataRequired, ValidationError
 from flaskblog.models import Doctors
 
 
@@ -16,8 +16,13 @@ class DoctorForm(FlaskForm):
     age = StringField("How old is it?")
     biography = TextAreaField('Content of treatment')
     picture = FileField("Choose a picture", validators=[FileAllowed(['jpg', 'png'])])
-    file_name = StringField("File name", validators=[DataRequired()])
+    # file_name = StringField("File name", validators=[DataRequired()])
     submit = SubmitField('Add the doctor')
+
+    def validate_name(self, name):
+        name = Doctors.query.filter_by(name=name.data).first()
+        if name:
+            raise ValidationError("This name is taken.")
 
 
 class UpdateDoctorForm(FlaskForm):
@@ -31,41 +36,10 @@ class UpdateDoctorForm(FlaskForm):
     age = StringField("How old is it?")
     biography = TextAreaField('Content of treatment')
     picture = FileField("Choose a picture", validators=[FileAllowed(['jpg', 'png'])])
-    file_name = StringField("File name", validators=[DataRequired()])
+    # file_name = StringField("File name", validators=[DataRequired()])
     submit = SubmitField('Update')
 
     def validate_name(self, name):
-        if name != name.data:
-            name = Doctors.query.filter_by(name=name.data).first()
-
-    def validate_sex(self, sex):
-        if sex != sex.data:
-            sex = Doctors.query.filter_by(sex=sex.data).first()
-
-    def validate_specialization(self, specialization):
-        if specialization != specialization.data:
-            specialization = Doctors.query.filter_by(specialization=specialization.data).first()
-
-    def validate_academic_degree(self, academic_degree):
-        if academic_degree != academic_degree.data:
-            academic_degree = Doctors.query.filter_by(academic_degree=academic_degree.data).first()
-
-    def validate_employer(self, employer):
-        if employer != employer.data:
-            employer = Doctors.query.filter_by(employer=employer.data).first()
-
-    def validate_position(self, position):
-        if position != position.data:
-            position = Doctors.query.filter_by(position=position.data).first()
-
-    def validate_city(self, city):
-        if city != city.data:
-            city = Doctors.query.filter_by(city=city.data).first()
-
-    def validate_age(self, age):
-        if age != age.data:
-            age = Doctors.query.filter_by(age=age.data).first()
-
-    def validate_picture(self, file_name):
-        if file_name != file_name.data:
-            file_name = Doctors.query.filter_by(image_file=file_name.data).first()
+        name = Doctors.query.filter_by(name=name.data).all()
+        if len(name) > 1:
+            raise ValidationError("This name is taken.")

@@ -3,6 +3,7 @@ from flaskblog import db, bcrypt, mail
 from flaskblog.news.forms import PostForm, UpdatePostForm
 from flaskblog.models import User, News
 from flask_login import login_required
+from flaskblog.utils import save_picture
 
 
 posts = Blueprint('posts', __name__)
@@ -14,9 +15,10 @@ posts = Blueprint('posts', __name__)
 def new_post():
     form = PostForm()
     if form.validate_on_submit():
-        picture = form.file_name.data
+        # picture = form.file_name.data
+        picture = save_picture(form.picture.data)
         image_file = url_for('static', filename='post_pics/' + picture)
-        post = News(title=form.title.data, content=form.content.data, image_file=image_file, )
+        post = News(title=form.title.data, content=form.content.data, image_file=image_file)
         db.session.add(post)
         db.session.commit()
         flash('Post created', 'success')
@@ -36,15 +38,18 @@ def update_post(post_id):
     # if post.author != current_user
     # if current_user:
     #     abort(403)
-    form = PostForm()
+    form = UpdatePostForm()
     if form.validate_on_submit():
+        if form.picture.data:
+            picture_file = save_picture(form.picture.data)
+            post.image_file = url_for('static', filename='post_pics/' + picture_file)
         post.title = form.title.data
         post.content = form.content.data
-        picture = form.file_name.data
-        image_file = url_for('static', filename='post_pics/' + picture)
+        # picture = form.file_name.data
+        # image_file = url_for('static', filename='post_pics/' + picture)
 
         db.session.commit()
-        flash('Post has beend updated', 'success')
+        flash('Post has been updated', 'success')
         return redirect(url_for('posts.post', post_id=post.id))
     elif request.method == "GET":
         form.title.data = post.title

@@ -3,6 +3,7 @@ from flaskblog import db, bcrypt, mail
 from flaskblog.organizations.forms import OrganizationForm, UpdateOrganiztionForm
 from flaskblog.models import Partners
 from flask_login import login_required
+from flaskblog.utils import save_picture
 
 
 organizations = Blueprint('organizations', __name__)
@@ -35,8 +36,8 @@ def new_organization():
             content = form.content.data
         else:
             content = "None"
-        picture = form.file_name.data
-        image_file = url_for('static', filename='partners_pics/' + picture)
+        picture = save_picture(form.picture.data)
+        image_file = url_for('static', filename='orgs_pics/' + picture)
         org = Partners(title=form.title.data, address=form.address.data, link=link, specialization=specialization,
                          image_file=image_file, city=city, country=country, content=content)
         db.session.add(org)
@@ -60,6 +61,10 @@ def update_org(orgs_id):
     #     abort(403)
     form = UpdateOrganiztionForm()
     if form.validate_on_submit():
+        if form.picture.data:
+            picture_file = save_picture(form.picture.data)
+            org.image_file = url_for('static', filename='orgs_pics/' + picture_file)
+
         org.title = form.title.data
         org.address = form.address.data
         org.content = form.content.data
@@ -68,8 +73,8 @@ def update_org(orgs_id):
         org.city = form.city.data
         org.country = form.country.data
 
-        picture = form.file_name.data
-        image_file = url_for('static', filename='orgs_pics/' + picture)
+        # picture = form.file_name.data
+        # image_file = url_for('static', filename='orgs_pics/' + picture)
 
         db.session.commit()
         flash('Organization has been updated', 'success')

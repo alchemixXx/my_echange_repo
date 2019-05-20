@@ -3,7 +3,7 @@ from flaskblog import db, bcrypt, mail
 from flaskblog.team.forms import TeamForm, UpdateTeamForm
 from flaskblog.models import Team
 from flask_login import login_required
-from flaskblog.doctors.utils import save_picture
+from flaskblog.utils import save_picture
 
 
 team = Blueprint('team', __name__)
@@ -17,10 +17,10 @@ def new_teammate():
             education = form.education.data
         else:
             education = "None"
-        if form.employer.data != "":
-            employer = form.employer.data
-        else:
-            employer = "None"
+        # if form.employer.data != "":
+        #     employer = form.employer.data
+        # else:
+        #     employer = "None"
         if form.position.data != "":
             position = form.position.data
         else:
@@ -41,7 +41,7 @@ def new_teammate():
             biography = form.biography.data
         else:
             biography = "None"
-        picture = form.file_name.data
+        picture = save_picture(form.picture.data)
         image_file = url_for('static', filename='teammate_pics/' + picture)
         teammate = Team(name=form.name.data, education=education, work=work,
                          work_position=work_position,
@@ -71,12 +71,12 @@ def update_teammate(teammate_id):
     if form.validate_on_submit():
         if form.picture.data:
             picture_file = save_picture(form.picture.data)
-            teammate.image_file = picture_file
+            teammate.image_file = url_for('static', filename='teammate_pics/' + picture_file)
         teammate.name = form.name.data
         teammate.education = form.education.data
         teammate.work = form.work.data
         teammate.work_position = form.work_position.data
-        teammate.employer = form.employer.data
+        # teammate.employer = form.employer.data
         teammate.position = form.position.data
         teammate.social_link = form.social_link.data
         teammate.biography = form.biography.data
@@ -91,7 +91,7 @@ def update_teammate(teammate_id):
         form.education.data = teammate.education
         form.work.data = teammate.work
         form.work_position.data = teammate.work_position
-        form.employer.data = teammate.employer
+        # form.employer.data = teammate.employer
         form.position.data = teammate.position
         form.social_link.data = teammate.social_link
         form.biography.data = teammate.biography

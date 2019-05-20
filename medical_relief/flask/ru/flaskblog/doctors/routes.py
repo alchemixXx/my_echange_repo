@@ -3,7 +3,7 @@ from flaskblog import db, bcrypt, mail
 from flaskblog.doctors.forms import DoctorForm, UpdateDoctorForm
 from flaskblog.models import Doctors
 from flask_login import login_required
-from flaskblog.doctors.utils import save_picture
+from flaskblog.utils import save_picture
 
 
 doctors = Blueprint('doctors', __name__)
@@ -40,7 +40,7 @@ def new_doctor():
             biography = form.biography.data
         else:
             biography = "None"
-        picture = form.file_name.data
+        picture = save_picture(form.picture.data)
         image_file = url_for('static', filename='doctor_pics/' + picture)
         doctor = Doctors(name=form.name.data, sex=form.sex.data, specialization=form.specialization.data,
                          academic_degree=academic_degree, employer=employer,
@@ -66,11 +66,11 @@ def update_doc(doctor_id):
     # if post.author != current_user
     # if current_user:
     #     abort(403)
-    form = DoctorForm()
+    form = UpdateDoctorForm()
     if form.validate_on_submit():
         if form.picture.data:
             picture_file = save_picture(form.picture.data)
-            doctor.image_file = picture_file
+            doctor.image_file = url_for('static', filename='doctor_pics/' + picture_file)
         doctor.name = form.name.data
         doctor.sex = form.sex.data
         doctor.specialization = form.specialization.data
