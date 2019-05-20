@@ -1,2 +1,6 @@
 __pycache__/
 venvs/
+.idea/
+Cursor/.idea/
+ medical_relief/flask/.idea/
+*.xml
