@@ -3,6 +3,7 @@ from flaskblog import db, bcrypt, mail
 from flaskblog.doctors.forms import DoctorForm, UpdateDoctorForm
 from flaskblog.models import Doctors
 from flask_login import login_required
+from flaskblog.doctors.utils import save_picture
 
 
 doctors = Blueprint('doctors', __name__)
@@ -67,6 +68,9 @@ def update_doc(doctor_id):
     #     abort(403)
     form = DoctorForm()
     if form.validate_on_submit():
+        if form.picture.data:
+            picture_file = save_picture(form.picture.data)
+            doctor.image_file = picture_file
         doctor.name = form.name.data
         doctor.sex = form.sex.data
         doctor.specialization = form.specialization.data
@@ -76,11 +80,11 @@ def update_doc(doctor_id):
         doctor.city = form.city.data
         doctor.age = form.age.data
         doctor.biography = form.biography.data
-        picture = form.file_name.data
-        image_file = url_for('static', filename='doctor_pics/' + picture)
+        # picture = form.file_name.data
+        # image_file = url_for('static', filename='doctor_pics/' + picture)
 
         db.session.commit()
-        flash('Doctor has beend updated', 'success')
+        flash('Doctor has been updated', 'success')
         return redirect(url_for('doctors.doctor', doctor_id=doctor.id))
     elif request.method == "GET":
         form.name.data = doctor.name
@@ -95,8 +99,9 @@ def update_doc(doctor_id):
         form.picture.data = doctor.image_file
     # return render_template('00_create_post.html', title="Update Post",
     #                        form=form, legend="Update Post")
+    image_file = url_for('static', filename='doctor_pics/' + doctor.image_file)
     return render_template('00_create_doctor.html', title="Update Doctor",
-                           form=form)
+                           form=form, image_file=image_file)
 
 
 @doctors.route("/doctors/<int:doctor_id>/delete", methods=['POST'])

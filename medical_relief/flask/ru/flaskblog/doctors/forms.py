@@ -66,6 +66,6 @@ class UpdateDoctorForm(FlaskForm):
         if age != age.data:
             age = Doctors.query.filter_by(age=age.data).first()
 
-    def validate_picture(self, picture):
-        if picture != picture.data:
-            picture = Doctors.query.filter_by(image_file=picture.data).first()
+    def validate_picture(self, file_name):
+        if file_name != file_name.data:
+            file_name = Doctors.query.filter_by(image_file=file_name.data).first()
