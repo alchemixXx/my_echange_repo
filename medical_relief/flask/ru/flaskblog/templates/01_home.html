@@ -4,7 +4,6 @@
 <main>
 
   <div class="main_photo">
-    <!-- <img id="back" src="https://www.healthcareitnews.com/sites/hitn/files/genetics-charting-stock-712.jpg" alt=""> -->
     <h1 class="display-4">БЛАГОТВОРИТЕЛЬНЫЙ ФОНД <br>
   "ДОПОМОГА МЕДИЦИНІ"</h1>
 
@@ -54,28 +53,12 @@
 
   {% for post in posts.items %}
 
-  <!-- <img class="rounded-circle article-img" src="{{ url_for('static', filename='post_pics'+'post.author.image_file') }}" alt="__sorry__"> -->
-  <!-- <img class="rounded-circle article-img" src="{{ url_for('static', filename='post_pics/'+'default.jpg') }}" alt="__sorry__"> -->
-
-
-
   <img class="pict" src="{{ post.image_file }}" alt='__sorry__'>
-   <!-- <article class="media content-section">
-     <div class="media-body">
-       <div class="article-metadata">
-         <small class="text-muted">{{post.pub_date.strftime('%Y-%m-%d')}}</small>
-       </div>
-       <h2><a class="article-title" href="{{url_for('posts.post', post_id=post.id)}}">{{post.title}}</a></h2>
-       <p class="article-content">{{post.content}}</p>
-        <hr class="my-4">
-     </div>
-
-   </article> -->
 
    <div class="text-container">
        <h2 class="news_title"><a class="article-title" href="{{url_for('posts.post', post_id=post.id)}}">{{post.title}}</a></h2>
-       <h3><small class="text-muted">{{post.pub_date.strftime('%Y-%m-%d')}}</small></h3>
-       <div class="content hideContent">
+       <small class="text-muted">{{post.pub_date.strftime('%Y-%m-%d')}}</small>
+       <div class="content">
          <p class="article-content">{{post.content}}</p>
            <!-- Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. -->
        </div>
@@ -85,54 +68,9 @@
    </div>
 
   {% endfor %}
-
-
-<!-- <div class="left">
-  <ul class="list-unstyled">
-    <li class="media">
-      <img src="./static/images/2.png" class="mr-3" alt="...">
-      <div class="media-body">
-        <a href="#"><h4 class="mt-0 mb-1">List-based media object</h4></a>
-        <p class="lead">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-      </div>
-    </li>
-    <li class="media my-4">
-      <img src="./static/images/2.png" class="mr-3" alt="...">
-      <div class="media-body">
-        <a href="#"><h4 class="mt-0 mb-1">List-based media object</h4></a>
-        <p class="lead">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-      </div>
-    </li>
-  </ul>
-</div>
-<div class="right">
-  <ul class="list-unstyled">
-    <li class="media">
-
-      <img src="./static/images/2.png" class="mr-3" alt="...">
-      <div class="media-body">
-        <a href="#"><h4 class="mt-0 mb-1">List-based media object</h4></a>
-        <p class="lead">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-      </div>
-    </li>
-    <li class="media my-4">
-      <img src="./static/images/2.png" class="mr-3" alt="...">
-      <div class="media-body">
-        <a href="#"><h4 class="mt-0 mb-1">List-based media object </h4></a>
-        <p class="lead">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-      </div>
-    </li>
-    </ul>
-</div> -->
             <hr class="my-4">
 </div>
   <p class="">Больше новостей Вы найдете в разделе <a href="{{url_for('main.news') }}">Новости</a>.</p>
-
-          <!-- <hr class="my-4">
-          <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-          <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> -->
-
-
         </div>
     </div>
 

@@ -18,7 +18,7 @@ mail = Mail()
 #from flaskblog import routes
 
 def create_app(config_class = Config):
-    app = Flask(__name__)
+    app = Flask(__name__, static_url_path='/static')
     app.config.from_object(Config)
     db.init_app(app)
     bcrypt.init_app(app)
