@@ -1,0 +1,16 @@
+{% macro macroform(variable) %}
+  <div class="form-group">
+      {{ form.variable.label(class="form-control-label") }}
+
+      {% if form.variable.errors %}
+          {{ form.variable(class="form-control form-control-lg is-invalid") }}
+          <div class="invalid-feedback">
+              {% for error in form.variable.errors %}
+                  <span>{{ error }}</span>
+              {% endfor %}
+          </div>
+      {% else %}
+          {{ form.variable(class="form-control form-control-lg") }}
+      {% endif %}
+  </div>
+{% endmacro %}

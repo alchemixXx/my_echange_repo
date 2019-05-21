@@ -1,6 +1,8 @@
 {% extends "00_layout.html" %}
 {% block content %}
 
+{% from 'macros.html' import macroform with context %}
+
 <main>
 
 <!-- MAIN CONTENT ZONE STARTS -->
@@ -13,7 +15,6 @@
                   {{ form.hidden_tag() }}
                   <fieldset class="form-group">
                       <legend class="border-bottom mb-4">{{legend}}</legend>
-
 
                       <div class="form-group">
                           {{ form.name.label(class="form-control-label") }}

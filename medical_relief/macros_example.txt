@@ -1,0 +1,5 @@
+{% from 'macros.html' import func_name with context %}
+
+{% macro name_of_function(atr1, atr2) %}
+
+{% endmacro %}
