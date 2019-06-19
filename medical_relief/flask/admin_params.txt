@@ -1,3 +1,9 @@
+SQLite
 username = Alex
 email = aetnis@yahoo.com
 password = test17site04time2346
+
+MySQL
+username = alexadmin
+pass = medical02reLief#24
+email = alskarf@gmail.com
